@@ -1,6 +1,6 @@
 {
   "hooks": {
     "pre-commit": "npm run build",
-    "pre-push": "echo PLEASE MAKE SURE THE DOCS FOLDER IS ADDED AND COMMITTED \nCheck with 'git status' \nIf in staging running 'git add .' \nAnd 'git commit -m \"your msg\"'"
+    "pre-push": "echo PLEASE MAKE SURE THE DOCS FOLDER IS ADDED AND COMMITTED \nCheck with \"git status\" \nIf in staging running \"git add .\" \nAnd \"git commit -m \"your msg\"\""
   }
 }
