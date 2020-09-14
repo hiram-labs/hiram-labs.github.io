@@ -6,7 +6,7 @@ import { Layout, Header, Body, Footer } from './components/index';
 class App extends Component {
   render() {
     return (
-      <div className={'app-wrapper'}>
+      <div className={'app-wrapper font-lato '}>
         <Layout header={<Header />} body={<Body />} footer={<Footer />} />
       </div>
     );

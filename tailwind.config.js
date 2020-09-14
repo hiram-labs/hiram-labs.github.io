@@ -17,6 +17,11 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+    extend: {
+      fontFamily: {
+        lato: ['lato']
+      }
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -26,6 +31,9 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+
+      customBg: '#000',
+      customText: '#fff',
 
       black: '#000',
       white: '#fff',
