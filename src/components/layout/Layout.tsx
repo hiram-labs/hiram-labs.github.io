@@ -21,7 +21,7 @@ const Layout: React.FC<TProps> = ({ header, body, footer }): JSX.Element => {
   return (
     <div
       className={
-        'min-h-screen bg-orange-300 text-customText flex flex-col item-center justify-between'
+        'min-h-screen bg-customBg text-customText flex flex-col item-center justify-between'
       }
       // ref={thisComponent}
     >
