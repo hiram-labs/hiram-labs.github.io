@@ -3,5 +3,21 @@
   "navLinks": ["services", "projects", "blog", "about", "career", "contact"],
   "bannerMsg": "let us handle the technical.",
   "bannerSub": "...we do big things for small businesses",
-  "services": ["apps", "website", "software", "data"]
+  "introMsg": "working as a freelancing collective, you know we love what we do.",
+  "introSub": "Your organisation's digital presence is the first impression these days. So you have to get it right and we are here to help you do just that. With most people spending at least 3 hours a day looking on thier phones, we adopt the mobile first approach and build from there.",
+  "servicesHeader": "getting it done",
+  "services": [
+    { "name": "apps" },
+    { "name": "website" },
+    { "name": "software" },
+    { "name": "data" }
+  ],
+  "projectsHeader": "cool builds",
+  "projects": [
+    {
+      "organisation": "uea investment society",
+      "service": "software",
+      "name": "investment dashboard"
+    }
+  ]
 }

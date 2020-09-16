@@ -26,14 +26,18 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
   const screenSize = useContext(AppContext).breakpoint; // get the current screen size
 
   // handles navbar fade and slide out logic on scroll
-  screenSize === 'lg' &&
-    styleAttributeEditor({
-      element: thisComponent.current?.children.item(1)?.children,
-      style:
-        scrollUnit! < props.scrollTriggerValue!
-          ? `opacity: ${1 - scrollUnit! / props.scrollTriggerValue!}`
-          : 'opacity: 0'
-    });
+  screenSize === 'lg'
+    ? styleAttributeEditor({
+        element: thisComponent.current?.children.item(1)?.children,
+        style:
+          scrollUnit! < props.scrollTriggerValue!
+            ? `opacity: ${1 - scrollUnit! / props.scrollTriggerValue!}`
+            : 'opacity: 0'
+      })
+    : styleAttributeEditor({
+        element: thisComponent.current?.children.item(1)?.children,
+        style: 'opacity: 1'
+      });
 
   return (
     <div

@@ -6,6 +6,41 @@
 /* adds lato fonts from google font api */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+/* straing under or overline in multi colors */
+.line-1::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: -0.25rem;
+  left: 0;
+  width: 10rem;
+  height: 8px;
+  border-radius: 1rem;
+  background: theme('colors.customComplementaryGreen');
+}
+.line-2::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: -0.25rem;
+  left: 0;
+  width: 10rem;
+  height: 8px;
+  border-radius: 1rem;
+  background: theme('colors.customComplementaryBlue');
+}
+.line-3::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: -0.25rem;
+  left: 0;
+  width: 10rem;
+  height: 8px;
+  border-radius: 1rem;
+  background: theme('colors.customComplementaryPink');
+}
+
 /* custom style classes */
 /* text shadow */
 @responsive {
