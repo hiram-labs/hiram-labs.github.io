@@ -1,40 +1,49 @@
 import { useEffect } from 'react';
-import $ from 'jquery';
 
 /**
  * Controls font-size and line-height based on element width.
  *
- * @param body - the container whose childrens typography will act responsively to resize
+ * @param element - the container whose childrens typography will act responsively to resize
+ * @param size - max font size
  */
-export function useResponsiveTypo(body: React.RefObject<HTMLDivElement>) {
-  const changes = () => {
+export function useResponsiveTypo(
+  element: React.RefObject<HTMLDivElement>,
+  size: number
+) {
+  const changes = async () => {
     const settings = {
       minimum: 500,
       maximum: 1200,
       minFont: 12,
-      maxFont: 20,
-      fontRatio: 30
+      maxFont: size,
+      fontRatio: 15
     };
-    var $el = $(body.current!),
-      elw = $el.width()!,
-      width =
-        elw > settings.maximum
-          ? settings.maximum
-          : elw < settings.minimum
-          ? settings.minimum
-          : elw,
-      fontBase = width / settings.fontRatio,
-      fontSize =
-        fontBase > settings.maxFont
-          ? settings.maxFont
-          : fontBase < settings.minFont
-          ? settings.minFont
-          : fontBase;
-    $el.css('font-size', fontSize + 'px');
+    let el = element.current!;
+    let elw = el.parentElement!.offsetWidth!;
+    let width = elw;
+    let fontBase = width / settings.fontRatio;
+    let fontSize = fontBase;
+    if (elw > settings.maximum) {
+      width = settings.maximum;
+    }
+    if (elw < settings.minimum) {
+      width = settings.minimum;
+    }
+    if (elw > settings.maximum) {
+      width = settings.maximum;
+    }
+    if (fontBase > settings.maxFont) {
+      fontSize = settings.maxFont;
+    }
+    if (fontBase < settings.minFont) {
+      fontSize = settings.minFont;
+    }
+
+    el.style.fontSize = fontSize + 'px';
   };
 
   useEffect(() => {
-    body && changes(); // run on load
+    element && changes(); // run on load
     window.addEventListener('resize', changes);
     return () => {
       window.removeEventListener('resize', changes);

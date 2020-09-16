@@ -1,0 +1,7 @@
+{
+  "companyName": "hiram labs ltd",
+  "navLinks": ["services", "projects", "blog", "about", "career", "contact"],
+  "bannerMsg": "let us handle the technical.",
+  "bannerSub": "...we do big things for small businesses",
+  "services": ["apps", "website", "software", "data"]
+}

@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { useResponsiveTypo } from '../../hooks/index';
+import React from 'react';
 
 interface TProps {
   header: JSX.Element;
@@ -15,15 +14,11 @@ interface TProps {
  * @property JSX.Element
  */
 const Layout: React.FC<TProps> = ({ header, body, footer }): JSX.Element => {
-  const thisComponent = useRef<HTMLDivElement>(null); // gets ref for component
-
-  useResponsiveTypo(thisComponent); // trigger the hook on load
   return (
     <div
       className={
-        'min-h-screen bg-black text-white flex flex-col justify-between'
+        'min-h-screen bg-customBg text-customText flex flex-col item-center justify-between overflow-hidden relative'
       }
-      ref={thisComponent}
     >
       {header}
       {body}

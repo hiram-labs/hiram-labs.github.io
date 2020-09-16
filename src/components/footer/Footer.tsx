@@ -11,7 +11,7 @@ interface TProps {}
 const Footer: React.FC<TProps> = (): JSX.Element => {
   return (
     <div className={cx(styles.container, 'text-center w-full mb-5 text-lg')}>
-      <p className={'text-2xl text-pink-400 font-bold my-5'}>
+      <p className={'text-xl text-customComplementaryBlue font-bold my-3'}>
         Temporarily unavailable due to maintenance
       </p>
       <p>Hiram Labs Ltd</p>
