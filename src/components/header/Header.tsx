@@ -85,7 +85,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
         <div
           className={cx(
             navIcon
-              ? 'absolute top-0 left-0 pt-16 bg-customSecondary shadow-lg rounded z-50'
+              ? 'absolute top-0 left-0 animate-slide-in-top pt-16 bg-customSecondary shadow-lg rounded z-50'
               : 'relative',
             'lg:center-child lg:col-span-2 lg:w-auto lg:relative lg:pt-0 lg:bg-transparent lg:shadow-none lg:z-auto grid grid-cols-4 col-span-10 w-screen'
           )}

@@ -39,6 +39,23 @@
   }
 }
 
+/* slides div in from top with fade in */
+@variants responsive {
+  .animate-slide-in-top {
+    animation: slide-in-top 0.75s;
+  }
+}
+@keyframes slide-in-top {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 /* slides div in from left with fade in */
 @variants responsive {
   .animate-slide-in-left {
