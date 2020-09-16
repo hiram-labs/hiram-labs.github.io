@@ -5,16 +5,6 @@
 
 /* adds lato fonts from google font api */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-/* @layer base { */
-@font-face {
-  font-family: 'custom_Herculanum';
-  src: local('Herculanum'),
-    url('/assets/fonts/Herculanum/Herculanum-Regular.ttf') format('truetype');
-}
-/* } */
-.custom-font-h {
-  font-family: custom_Herculanum;
-}
 
 /* custom style classes */
 /* text shadow */
