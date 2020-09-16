@@ -34,9 +34,7 @@ const Body: React.FC<TProps> = (): JSX.Element => {
           {content.bannerSub}
         </div>
         <div
-          className={
-            'sm:grid lg:grid-cols-4 grid-cols-2 my-10 gap-10 max-w-4xl hidden'
-          }
+          className={'grid lg:grid-cols-4 grid-cols-2 my-10 gap-10 max-w-4xl'}
         >
           {content.services.map((e) => (
             <div key={e} className={'center-child'}>
