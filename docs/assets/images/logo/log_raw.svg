@@ -19,6 +19,28 @@
       .cls-3 {
         stroke: none;
       }
+
+      #H {
+        animation: gradient ease-in-out 5s infinite;
+        animation-direction: alternate;
+      }
+      @keyframes gradient {
+        0% {
+          fill: #a8e6cf;
+        }
+        25% {
+          fill: #dcedc1;
+        }
+        50% {
+          fill: #ffd3b6;
+        }
+        75% {
+          fill: #ffaaa5;
+        }
+        100% {
+          fill: #ff8b94;
+        }
+      }
     </style>
   </defs>
   <g id="Group_3" data-name="Group 3" transform="translate(-72.312 -72.312)">
