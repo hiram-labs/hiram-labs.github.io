@@ -34,13 +34,15 @@ const Body: React.FC<TProps> = (): JSX.Element => {
           {content.bannerSub}
         </div>
         <div
-          className={'grid lg:grid-cols-4 grid-cols-2 my-10 gap-10 max-w-4xl'}
+          className={
+            'sm:grid lg:grid-cols-4 grid-cols-2 my-10 gap-10 max-w-4xl hidden'
+          }
         >
           {content.services.map((e) => (
             <div key={e} className={'center-child'}>
               <button
                 className={
-                  'hvr-icon-wobble-horizontal uppercase text-lg font-extrabold py-2 px-4 border-2 border-customText rounded-lg'
+                  'hvr-icon-wobble-horizontal uppercase text-lg font-extrabold py-2 px-4 btn-3d rounded-lg '
                 }
               >
                 <div className="center-child w-32 gap-2">

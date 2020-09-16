@@ -23,9 +23,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
     useContext(AppContext).scrollDirection?.(props.scrollTriggerValue!) === 'UP'
       ? true
       : false; // gets users scroll direction from dataStore
-
   const screenSize = useContext(AppContext).breakpoint; // get the current screen size
-  console.log(screenSize);
 
   // handles navbar fade and slide out logic on scroll
   screenSize === 'lg' &&
@@ -58,7 +56,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
       <div
         className={cx(
           trigger ? 'lg:max-w-none' : null,
-          'grid grid-cols-10 gap-5 max-w-6xl my-10'
+          'sm:my-10 grid grid-cols-10 gap-5 max-w-6xl my-5'
         )}
       >
         {/* sets half of the links left */}
@@ -71,7 +69,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             {arrayHalfer(content.navLinks)[0].map((e) => (
               <div
                 className={
-                  'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer'
+                  'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
                 }
                 key={e}
                 tabIndex={0}
@@ -100,7 +98,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             {/* medium screen company name left */}
             <div
               className={
-                'lg:hidden sm:flex hidden animate-slide-in-left justify-end whitespace-no-wrap text-xl uppercase font-extrabold font-Herculanum'
+                'lg:hidden sm:flex hidden animate-slide-in-left justify-end whitespace-no-wrap text-xl uppercase font-extrabold text-shadow-3d font-Herculanum'
               }
             >
               {stringHalfer(content.companyName)[0]}
@@ -116,7 +114,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             {/* medium screen company name right */}
             <div
               className={
-                'lg:hidden sm:flex hidden animate-slide-in-right justify-start whitespace-no-wrap text-xl uppercase font-extrabold font-Herculanum'
+                'lg:hidden sm:flex hidden animate-slide-in-right justify-start whitespace-no-wrap text-xl uppercase font-extrabold text-shadow-3d font-Herculanum'
               }
             >
               {stringHalfer(content.companyName)[1]}
@@ -124,7 +122,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             {/* small screen company name */}
             <div
               className={
-                'sm:hidden animate-slide-in-right whitespace-no-wrap text-xl uppercase font-extrabold font-Herculanum ml-2'
+                'sm:hidden animate-slide-in-right whitespace-no-wrap text-xl uppercase font-extrabold font-Herculanum text-shadow-3d ml-2'
               }
             >
               <div>{stringHalfer(content.companyName)[0]}</div>
@@ -170,7 +168,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             {arrayHalfer(content.navLinks)[1].map((e) => (
               <div
                 className={
-                  'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer'
+                  'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
                 }
                 key={e}
                 tabIndex={0}
