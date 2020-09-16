@@ -19,8 +19,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        lato: ['lato'],
-        Herculanum: ['Herculanum']
+        lato: ['lato']
       }
     },
     screens: {

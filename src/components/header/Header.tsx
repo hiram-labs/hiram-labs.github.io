@@ -98,7 +98,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             {/* medium screen company name left */}
             <div
               className={
-                'lg:hidden sm:flex hidden animate-slide-in-left justify-end whitespace-no-wrap text-xl uppercase font-extrabold text-shadow-3d font-Herculanum'
+                'lg:hidden sm:flex hidden animate-slide-in-left justify-end whitespace-no-wrap text-xl uppercase font-extrabold text-shadow-3d custom-font-h'
               }
             >
               {stringHalfer(content.companyName)[0]}
@@ -114,7 +114,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             {/* medium screen company name right */}
             <div
               className={
-                'lg:hidden sm:flex hidden animate-slide-in-right justify-start whitespace-no-wrap text-xl uppercase font-extrabold text-shadow-3d font-Herculanum'
+                'lg:hidden sm:flex hidden animate-slide-in-right justify-start whitespace-no-wrap text-xl uppercase font-extrabold text-shadow-3d custom-font-h'
               }
             >
               {stringHalfer(content.companyName)[1]}
@@ -122,7 +122,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             {/* small screen company name */}
             <div
               className={
-                'sm:hidden animate-slide-in-right whitespace-no-wrap text-xl uppercase font-extrabold font-Herculanum text-shadow-3d ml-2'
+                'sm:hidden animate-slide-in-right whitespace-no-wrap text-xl uppercase font-extrabold font-CHerculanum text-shadow-3d ml-2'
               }
             >
               <div>{stringHalfer(content.companyName)[0]}</div>
