@@ -8,8 +8,7 @@
 @layer base {
   @font-face {
     font-family: Herculanum;
-    src: url('/docs/assets/fonts/Herculanum/Herculanum-Regular.ttf')
-      format('ttf');
+    src: url('/assets/fonts/Herculanum/Herculanum-Regular.ttf') format('ttf');
   }
 }
 
