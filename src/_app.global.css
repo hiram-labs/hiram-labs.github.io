@@ -6,12 +6,102 @@
 /* adds lato fonts from google font api */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-/* custome style classes */
+/* custom style classes */
+/* text shadow */
+@responsive {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .text-shadow-md {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+  .text-shadow-lg {
+    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+  }
+  .text-shadow-xl {
+    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  .text-shadow-2xl {
+    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 1);
+  }
+
+  .text-shadow-none {
+    text-shadow: none;
+  }
+}
+
+/* centers a div */
 @variants responsive {
   .center-child {
     @apply flex;
     @apply justify-center;
     @apply items-center;
+  }
+}
+
+/* slides div in from left with fade in */
+@variants responsive {
+  .animate-slide-in-left {
+    animation: slide-in-left 0.75s;
+  }
+}
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* slides div in from right with fade in  */
+@variants responsive {
+  .animate-slide-in-right {
+    animation: custom-slide-in-right 0.75s;
+  }
+}
+@keyframes custom-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* Grows div from scale 0 t0 100% with fade in  */
+@variants responsive {
+  .animate-grow {
+    animation: custom-grow 0.75s;
+  }
+}
+@keyframes custom-grow {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade div out and hide  */
+@variants responsive {
+  .animate-fade-in {
+    animation: custom-fade-in 1s;
+  }
+}
+@keyframes custom-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -33,7 +123,7 @@
   left: 51%;
   right: 51%;
   bottom: 0;
-  background: theme('colors.pink.600');
+  background: theme('colors.customComplementaryPink');
   height: 4px;
   -webkit-transition-property: left, right;
   transition-property: left, right;

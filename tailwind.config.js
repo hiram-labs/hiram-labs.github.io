@@ -19,7 +19,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        lato: ['lato']
+        lato: ['lato'],
+        Herculanum: ['Herculanum']
       }
     },
     screens: {
@@ -32,8 +33,12 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
 
-      customBg: '#000',
-      customText: '#fff',
+      customSecondary: '#2d3748',
+      customBg: '#313639 ',
+      customText: '#fbf7f5',
+      customComplementaryBlue: '#54cae7',
+      customComplementaryPink: '#e75480',
+      customComplementaryGreen: '#54e772',
 
       black: '#000',
       white: '#fff',
