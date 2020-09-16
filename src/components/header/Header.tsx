@@ -26,7 +26,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
   const screenSize = useContext(AppContext).breakpoint; // get the current screen size
 
   // handles navbar fade and slide out logic on scroll
-  screenSize === 'lg'
+  screenSize === 'lg' || screenSize === 'xl'
     ? styleAttributeEditor({
         element: thisComponent.current?.children.item(1)?.children,
         style:
@@ -39,6 +39,12 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
         style: 'opacity: 1'
       });
 
+  // trigger &&
+  //   styleAttributeEditor({
+  //     element: thisComponent.current?.children.item(0),
+  //     style: 'transform: translateY(0%); transition: transform 5s'
+  //   });
+
   return (
     <div
       ref={thisComponent}
@@ -49,18 +55,36 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
       )}
     >
       {/* big screen navbar */}
+
+      {/* on scroll big screen navbar */}
       <div
         className={cx(
           trigger ? 'lg:opacity-100 ' : null,
-          'lg:grid lg:fixed top-0 lg:w-screen hidden opacity-0 border-8'
+          'lg:fixed lg:w-screen lg:flex items-center justify-between top-0 py-4 px-10  bg-customSecondary shadow-2xl opacity-0 z-50 hidden'
         )}
       >
-        hello
+        <div className={'flex justify-start space-x-20 col-start-1 w-16'}>
+          {logoSvg}
+        </div>
+        <div className={'flex justify-end space-x-20 col-start-2'}>
+          {content.navLinks.map((e) => (
+            <div
+              className={
+                'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+              }
+              key={e + ' sticky'}
+              tabIndex={0}
+            >
+              {e}
+            </div>
+          ))}
+        </div>
       </div>
+      {/* onload big screen navbar */}
       <div
         className={cx(
           trigger ? 'lg:max-w-none' : null,
-          'sm:my-10 grid grid-cols-10 gap-5 max-w-6xl my-5'
+          'sm:my-8 grid grid-cols-10 gap-5 max-w-6xl my-5'
         )}
       >
         {/* sets half of the links left */}
@@ -107,14 +131,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             >
               {stringHalfer(content.companyName)[0]}
             </div>
-            <div>
-              {React.createElement(
-                require('../../../dev/assets/images/logo/log_raw.svg'),
-                {
-                  className: 'nav-logo w-20 sm:animate-grow'
-                }
-              )}
-            </div>
+            <div>{logoSvg}</div>
             {/* medium screen company name right */}
             <div
               className={
@@ -191,5 +208,13 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
 Header.defaultProps = {
   scrollTriggerValue: 50
 };
+
+// create a react component from the logo svg
+const logoSvg = React.createElement(
+  require('../../../dev/assets/images/logo/log_raw.svg'),
+  {
+    className: 'nav-logo w-20 sm:animate-grow'
+  }
+);
 
 export default Header;

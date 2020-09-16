@@ -99,6 +99,7 @@ const Body: React.FC<TProps> = (): JSX.Element => {
 
           {[1, 2, 3].map((e) => (
             <div
+              key={e}
               className={cx(styles.wrapper)}
               style={{ height: screenSizeUnit! < 900 ? '350px' : '' }}
             >
