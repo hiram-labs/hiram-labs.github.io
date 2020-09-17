@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import styles from './header.module.css';
 import cx from 'classnames';
-import { FiGrid } from 'react-icons/fi';
+import { FiGrid, FiChevronDown, FiArrowDown } from 'react-icons/fi';
 import content from '../../data/content.json';
 import { stringHalfer, arrayHalfer } from '../../libraries/dataParser';
 import { styleAttributeEditor } from '../../libraries/domLogic';
@@ -39,12 +39,6 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
         style: 'opacity: 1'
       });
 
-  // trigger &&
-  //   styleAttributeEditor({
-  //     element: thisComponent.current?.children.item(0),
-  //     style: 'transform: translateY(0%); transition: transform 5s'
-  //   });
-
   return (
     <div
       ref={thisComponent}
@@ -59,8 +53,8 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
       {/* on scroll big screen navbar */}
       <div
         className={cx(
-          trigger ? 'lg:opacity-100 ' : null,
-          'lg:fixed lg:w-screen lg:flex items-center justify-between top-0 py-4 px-10  bg-customSecondary shadow-2xl opacity-0 z-50 hidden'
+          trigger ? 'lg:opacity-100 animate-slide-in-top z-50' : null,
+          'lg:fixed lg:w-screen lg:flex items-center justify-between top-0 py-4 px-20  bg-customSecondary shadow-2xl opacity-0 hidden'
         )}
       >
         <div className={'flex justify-start space-x-20 col-start-1 w-16'}>
@@ -69,13 +63,23 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
         <div className={'flex justify-end space-x-20 col-start-2'}>
           {content.navLinks.map((e) => (
             <div
-              className={
-                'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
-              }
-              key={e + ' sticky'}
+              className={cx(
+                e.details
+                  ? 'hvr-icon-wobble-vertical'
+                  : 'hvr-underline-from-center',
+                'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+              )}
+              key={e.name + '-sticky'}
               tabIndex={0}
             >
-              {e}
+              {e.name}
+              {e.details && (
+                <FiChevronDown
+                  className={
+                    'inline ml-1 text-customComplementaryGreen hvr-icon'
+                  }
+                />
+              )}
             </div>
           ))}
         </div>
@@ -88,25 +92,33 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
         )}
       >
         {/* sets half of the links left */}
-        {
-          <div
-            className={
-              'lg:flex hidden animate-slide-in-left space-x-20 col-span-4 items-center justify-between'
-            }
-          >
-            {arrayHalfer(content.navLinks)[0].map((e) => (
-              <div
-                className={
-                  'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
-                }
-                key={e}
-                tabIndex={0}
-              >
-                {e}
-              </div>
-            ))}
-          </div>
-        }
+        <div
+          className={
+            'lg:flex hidden animate-slide-in-left space-x-20 col-span-4 items-center justify-between'
+          }
+        >
+          {arrayHalfer(content.navLinks)[0].map((e) => (
+            <div
+              className={cx(
+                e.details
+                  ? 'hvr-icon-wobble-vertical'
+                  : 'hvr-underline-from-center',
+                'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+              )}
+              key={e.name}
+              tabIndex={0}
+            >
+              {e.name}
+              {e.details && (
+                <FiChevronDown
+                  className={
+                    'inline ml-1 text-customComplementaryGreen hvr-icon'
+                  }
+                />
+              )}
+            </div>
+          ))}
+        </div>
         {/* sets the company logo in the middle for large screens and handles small screen navbar logic */}
         <div
           className={cx(
@@ -168,37 +180,57 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
           >
             {content.navLinks.map((e) => (
               <div
-                className={
-                  'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer'
-                }
-                key={e}
+                className={cx(
+                  e.details
+                    ? 'hvr-icon-wobble-vertical'
+                    : 'hvr-underline-from-center',
+                  'uppercase text-lg font-extrabold cursor-pointer'
+                )}
+                key={e.name}
                 tabIndex={0}
               >
-                {e}
+                <span>
+                  {e.name}
+                  {e.details && (
+                    <FiArrowDown
+                      className={
+                        'inline ml-1 text-customComplementaryGreen hvr-icon'
+                      }
+                    />
+                  )}
+                </span>
               </div>
             ))}
           </div>
         </div>
         {/* sets remaining of the links right */}
-        {
-          <div
-            className={
-              'lg:flex hidden animate-slide-in-right space-x-20 col-span-4 items-center justify-between'
-            }
-          >
-            {arrayHalfer(content.navLinks)[1].map((e) => (
-              <div
-                className={
-                  'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
-                }
-                key={e}
-                tabIndex={0}
-              >
-                {e}
-              </div>
-            ))}
-          </div>
-        }
+        <div
+          className={
+            'lg:flex hidden animate-slide-in-right space-x-20 col-span-4 items-center justify-between'
+          }
+        >
+          {arrayHalfer(content.navLinks)[1].map((e) => (
+            <div
+              className={cx(
+                e.details
+                  ? 'hvr-icon-wobble-vertical'
+                  : 'hvr-underline-from-center',
+                'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+              )}
+              key={e.name}
+              tabIndex={0}
+            >
+              {e.name}
+              {e.details && (
+                <FiChevronDown
+                  className={
+                    'inline ml-1 text-customComplementaryGreen hvr-icon'
+                  }
+                />
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

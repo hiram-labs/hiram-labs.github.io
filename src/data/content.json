@@ -1,10 +1,17 @@
 {
   "companyName": "hiram labs ltd",
-  "navLinks": ["services", "projects", "blog", "about", "career", "contact"],
   "bannerMsg": "let us handle the technical.",
   "bannerSub": "...we do big things for small businesses",
   "introMsg": "working as a freelancing collective, you know we love what we do.",
   "introSub": "Your organisation's digital presence is the first impression these days. So you have to get it right and we are here to help you do just that. With most people spending at least 3 hours a day looking on thier phones, we adopt the mobile first approach and build from there.",
+  "navLinks": [
+    { "name": "services", "details": ["details go here!!!!"] },
+    { "name": "projects", "details": "" },
+    { "name": "blog", "details": "" },
+    { "name": "about", "details": "" },
+    { "name": "career", "details": "" },
+    { "name": "contact", "details": "" }
+  ],
   "servicesHeader": "getting it done",
   "services": [
     { "name": "apps" },
