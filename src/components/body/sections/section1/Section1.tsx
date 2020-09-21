@@ -2,9 +2,10 @@ import React, { useRef, useState } from 'react';
 import styles from './section1.module.css';
 import cx from 'classnames';
 import { useResponsiveTypo } from '../../../../hooks/index';
-import { FiArrowRight, FiArrowDown, FiArrowUp } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 import Hoc from '../../../../libraries/Hoc';
 import content from '../../../../data/content.json';
+import Dropdown from '../../../buttons/Dropdown';
 
 interface TProps {}
 /**
@@ -14,7 +15,6 @@ interface TProps {}
 const Section1: React.FC<TProps> = (): JSX.Element => {
   const bannerMsgRef = useRef<HTMLDivElement>(null); // gets ref for bannerMsgRef
   useResponsiveTypo(bannerMsgRef, 65); // trigger the hook on load
-  const [openServicesDropdown, setopenServicesDropdown] = useState(false);
 
   return (
     <>
@@ -67,72 +67,12 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
           ))}
         </div>
         {/* small screen buttons */}
-        {/* wrapper */}
         <div
           className={
             'lg:hidden center-child flex-col max-w-4xl animate-slide-in-top'
           }
         >
-          {/* two clickable objects */}
-          <div
-            className={'uppercase text-lg font-extrabold btn-3d rounded-lg '}
-          >
-            <div className="grid grid-cols-8 w-64">
-              <Hoc>
-                <div
-                  className={
-                    'center-child col-span-6 whitespace-no-wrap py-2 px-4'
-                  }
-                  tabIndex={0}
-                >
-                  our services
-                </div>
-              </Hoc>
-              <Hoc>
-                <div
-                  className={
-                    'hvr-icon-wobble-vertical col-span-2 border-l-4 text-2xl rounded-r-lg bg-customSecondary'
-                  }
-                  tabIndex={0}
-                  onClick={() => setopenServicesDropdown(!openServicesDropdown)}
-                >
-                  <div className={'h-full center-child'}>
-                    {openServicesDropdown ? (
-                      <FiArrowUp className={'hvr-icon'} />
-                    ) : (
-                      <FiArrowDown className={'hvr-icon'} />
-                    )}
-                  </div>
-                </div>
-              </Hoc>
-            </div>
-          </div>
-          {/* dropdown */}
-          {openServicesDropdown && (
-            <div className={'w-full relative'}>
-              <div
-                className={
-                  'absolute top-0 w-full my-5 border-2 rounded-lg shadow-2xl text-customBg bg-customText z-50'
-                }
-              >
-                {content.services.map((e, i) => (
-                  <div key={e.name + '-drop-down'}>
-                    <div
-                      className={
-                        'py-2 px-8 rounded-lg animate-slide-in-left hover:shadow-inner hover:bg-customBg hover:text-customText'
-                      }
-                      tabIndex={0}
-                    >
-                      <div className={'text-xl font-medium uppercase'}>
-                        {e.name}
-                      </div>
-                    </div>
-                    {i < content.services.length - 1 && <hr />}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          <Dropdown label='our services' content={content.services}/>
         </div>
       </div>
     </>

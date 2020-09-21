@@ -324,6 +324,9 @@
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
+.hvr-icon-wobble-horizontal:focus {
+  outline: none;
+}
 
 /* Icon Wobble Vertical */
 @-webkit-keyframes hvr-icon-wobble-vertical {
@@ -402,4 +405,7 @@
   animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+}
+.hvr-icon-wobble-vertical:focus {
+  outline: none;
 }
