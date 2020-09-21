@@ -1,2 +1,15 @@
 .section4 {
 }
+
+.image-wrapper {
+  height: 500px;
+  max-height: 90vh;
+}
+.image-wrapper img {
+  display: block;
+  transition: transform ease-in-out 0.5s;
+}
+.image-wrapper:hover img {
+  transform: scale(1.2);
+  transform-origin: 50% 50%;
+}

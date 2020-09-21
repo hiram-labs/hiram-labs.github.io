@@ -24,7 +24,14 @@
     {
       "organisation": "uea investment society",
       "service": "software",
-      "name": "investment dashboard"
+      "name": "investment dashboard",
+      "image": "uea_invest_society.jpg"
+    },
+    {
+      "organisation": "unit9",
+      "service": "website",
+      "name": "unit9 landing page",
+      "image": "unit9.jpg"
     }
   ]
 }
