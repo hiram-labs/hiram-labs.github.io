@@ -1,8 +1,8 @@
 {
   "companyName": "hiram labs ltd",
-  "bannerMsg": "let us handle the technical.",
+  "bannerHeader": "let us handle the technical.",
   "bannerSub": "...we do big things for small businesses",
-  "introMsg": "working as a freelancing collective, you know we love what we do.",
+  "introHeader": "working as a freelancing collective, you know we love what we do.",
   "introSub": "Your organisation's digital presence is the first impression these days. So you have to get it right and we are here to help you do just that. With most people spending at least 3 hours a day looking on thier phones, we adopt the mobile first approach and build from there.",
   "navLinks": [
     { "name": "services", "details": ["details go here!!!!"] },
@@ -19,7 +19,8 @@
     { "name": "software" },
     { "name": "data" }
   ],
-  "projectsHeader": "cool builds",
+  "projectsHeader": "with the flexibility to work with your ideas or brainstorm new ones with you, the highest quality of a production version is always assured.",
+  "projectsSub": "Your organisation's goal is what we strive to bring to life, be it a very specific idea you have or a problem you want us to solve with our expertise.",
   "projects": [
     {
       "organisation": "uea investment society",

@@ -13,8 +13,8 @@ interface TProps {}
  *
  */
 const Section1: React.FC<TProps> = (): JSX.Element => {
-  const bannerMsgRef = useRef<HTMLDivElement>(null); // gets ref for bannerMsgRef
-  useResponsiveTypo(bannerMsgRef, 65); // trigger the hook on load
+  const bannerHeaderRef = useRef<HTMLDivElement>(null); // gets ref for bannerHeaderRef
+  useResponsiveTypo(bannerHeaderRef, 65); // trigger the hook on load
 
   return (
     <>
@@ -27,12 +27,12 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
         {/* banner and sub banner text */}
         <div className={'px-10 text-center'}>
           <div
-            ref={bannerMsgRef}
+            ref={bannerHeaderRef}
             className={
               'text-6xl uppercase font-black text-shadow-2xl animate-slide-in-top'
             }
           >
-            {content.bannerMsg}
+            {content.bannerHeader}
           </div>
           <div
             className={
@@ -72,7 +72,7 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
             'lg:hidden center-child flex-col max-w-4xl animate-slide-in-top'
           }
         >
-          <Dropdown label='our services' content={content.services}/>
+          <Dropdown label="our services" content={content.services} />
         </div>
       </div>
     </>

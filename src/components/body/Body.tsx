@@ -16,19 +16,35 @@ const Body: React.FC<TProps> = (): JSX.Element => {
   return (
     <div className={cx(styles.container)}>
       {/* landing section */}
-      <div className={'w-screen center-child bg-customBg text-customText'}>
+      <div
+        className={
+          'w-screen center-child bg-customBg text-customText overflow-hidden'
+        }
+      >
         <Section1 />
       </div>
       {/* short intro section */}
-      <div className={'w-screen center-child bg-customText text-customBg'}>
+      <div
+        className={
+          'w-screen center-child bg-customText text-customBg overflow-hidden'
+        }
+      >
         <Section2 />
       </div>
       {/* tech stack section */}
-      <div className={'w-screen center-child bg-customBg text-customText'}>
+      <div
+        className={
+          'w-screen center-child bg-customBg text-customText overflow-hidden'
+        }
+      >
         <Section3 />
       </div>
       {/* projects section */}
-      <div className={'w-screen center-child bg-customText text-customBg'}>
+      <div
+        className={
+          'w-screen center-child bg-customText text-customBg overflow-hidden'
+        }
+      >
         <Section4 />
       </div>
     </div>
