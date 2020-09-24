@@ -1,6 +1,8 @@
 .section3 {
+  max-width: 1500px;
 }
-.wrapper {
+
+/* .wrapper {
   width: 300px;
   height: 250px;
   perspective: 900px;
@@ -50,4 +52,4 @@
   100% {
     top: 0%;
   }
-}
+} */

@@ -1,10 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import styles from './section1.module.css';
 import cx from 'classnames';
 import { useResponsiveTypo } from '../../../../hooks/index';
-import { FiArrowRight } from 'react-icons/fi';
-import Hoc from '../../../../libraries/Hoc';
 import content from '../../../../data/content.json';
+import Button3d from '../../../buttons/Button3d';
 import Dropdown from '../../../buttons/Dropdown';
 
 interface TProps {}
@@ -50,20 +49,7 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
           }
         >
           {content.services.map((e) => (
-            <div key={e.name} className={'center-child animate-grow'}>
-              <Hoc>
-                <button
-                  className={
-                    'hvr-icon-wobble-horizontal uppercase text-lg font-extrabold py-2 px-4 btn-3d rounded-lg '
-                  }
-                >
-                  <div className="center-child w-32 gap-2">
-                    <div>{e.name}</div>
-                    <FiArrowRight className={'hvr-icon text-lg'} />
-                  </div>
-                </button>
-              </Hoc>
-            </div>
+            <Button3d key={e.name} label={e.name} flavour={'white'} />
           ))}
         </div>
         {/* small screen buttons */}
@@ -72,7 +58,11 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
             'lg:hidden center-child flex-col max-w-4xl animate-slide-in-top'
           }
         >
-          <Dropdown label="our services" content={content.services} />
+          <Dropdown
+            flavour={'white'}
+            label="our services"
+            content={content.services}
+          />
         </div>
       </div>
     </>

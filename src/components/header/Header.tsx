@@ -49,39 +49,44 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
       )}
     >
       {/* big screen navbar */}
-
       {/* on scroll big screen navbar */}
       <div
         className={cx(
           trigger ? 'lg:opacity-100 animate-slide-in-top z-50' : null,
-          'lg:fixed lg:w-screen lg:flex items-center justify-between top-0 py-4 px-20  bg-customSecondary shadow-2xl opacity-0 hidden'
+          'lg:fixed lg:w-screen lg:center-child top-0 bg-customSecondary shadow-2xl opacity-0 hidden'
         )}
       >
-        <div className={'flex justify-start space-x-20 col-start-1 w-16'}>
-          {logoSvg}
-        </div>
-        <div className={'flex justify-end space-x-20 col-start-2'}>
-          {content.navLinks.map((e) => (
-            <div
-              className={cx(
-                e.details
-                  ? 'hvr-icon-wobble-vertical'
-                  : 'hvr-underline-from-center',
-                'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
-              )}
-              key={e.name + '-sticky'}
-              tabIndex={0}
-            >
-              {e.name}
-              {e.details && (
-                <FiChevronDown
-                  className={
-                    'inline ml-1 text-customComplementaryGreen hvr-icon'
-                  }
-                />
-              )}
-            </div>
-          ))}
+        <div
+          className={cx(
+            styles.wrapper,
+            'flex items-center justify-between mx-10 my-4'
+          )}
+        >
+          <div className={'flex justify-start space-x-20 col-start-1 w-16'}>
+            {logoSvg}
+          </div>
+          <div className={'flex justify-end space-x-20 col-start-2'}>
+            {content.navLinks.map((e) => (
+              <div
+                className={cx(
+                  e.details
+                    ? 'hvr-icon-wobble-vertical'
+                    : 'hvr-underline-from-center',
+                  'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+                )}
+                key={e.name + '-sticky'}
+              >
+                {e.name}
+                {e.details && (
+                  <FiChevronDown
+                    className={
+                      'inline ml-1 text-customComplementaryGreen hvr-icon'
+                    }
+                  />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       {/* onload big screen navbar */}
@@ -238,7 +243,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
 
 // sets default props
 Header.defaultProps = {
-  scrollTriggerValue: 50
+  scrollTriggerValue: 60
 };
 
 // create a react component from the logo svg

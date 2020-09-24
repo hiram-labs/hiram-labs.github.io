@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from './section3.module.css';
 import cx from 'classnames';
 import content from '../../../../data/content.json';
-import { AppContext } from '../../../../hooks/index';
+import path from 'path';
 
 interface TProps {}
 
@@ -11,42 +11,43 @@ interface TProps {}
  *
  */
 const Section3: React.FC<TProps> = (): JSX.Element => {
-  const screenSizeUnit = useContext(AppContext).breakpointUnit; // get the current screen size
-
   return (
     <>
-      <div className={cx(styles.section3, 'center-child w-full max-w-6xl')}>
-        hello
+      <div
+        className={cx(styles.section3, 'center-child my-20 flex-col w-full')}
+      >
+        <div
+          className={
+            'lg:mx-20 self-start center-child flex-col mx-10 max-w-4xl'
+          }
+        >
+          <div
+            className={
+              'self-start text-4xl font-bold leading-tight line-3 pt-5 relative'
+            }
+          >
+            {content.techHeader}
+          </div>
+          <div className={'self-start py-4 text-xl'}>{content.techSub}</div>
+        </div>
+        <div className={'lg:mx-20 w-full self-start mx-10 mt-10'}>
+          <div
+            className={'w-full flex items-center space-x-16 overflow-scroll'}
+          >
+            {content.tech.map((e, i, arr) => (
+              <div className={cx(i === arr.length - 1 && 'pr-32')} key={e.name}>
+                {React.createElement(
+                  require('../../../../../dev/assets/images/tech/' + e.image),
+                  {
+                    className: 'nav-logo w-20 sm:animate-grow'
+                  }
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
 };
 export default Section3;
-
-{
-  /* <div
-  className={cx(
-    screenSizeUnit! < 900 ? 'flex w-screen overflow-x-scroll' : 'center-child',
-    ' relative'
-  )}
->
-  <div className={'center-child self-start absolute w-full h-20'}>
-    <div className={'absolute top-0 left-0 text-4xl font-bold mt-1 line-1'}>
-      {content.projectsHeader}
-    </div>
-  </div>
-
-  {[1, 2, 3].map((e) => (
-    <div
-      key={e}
-      className={cx(styles.wrapper)}
-      style={{ height: screenSizeUnit! < 900 ? '350px' : '' }}
-    >
-      <div className={cx(styles.card, 'shadow-2xl rounded-lg bg-pink-200')}>
-        <div className={styles.image}>img</div>
-        <div className={styles.story}>story</div>
-      </div>
-    </div>
-  ))}
-</div>; */
-}

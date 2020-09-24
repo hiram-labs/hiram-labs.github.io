@@ -4,8 +4,9 @@ import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
 import cx from 'classnames';
 
 interface TProps {
+  flavour: 'black' | 'white';
   label: string;
-  content: Array<string | {[key: string]: string}>;
+  content: Array<string | { [key: string]: string }>;
 }
 
 /**
@@ -17,7 +18,13 @@ const Dropdown: React.FC<TProps> = (props): JSX.Element => {
 
   return (
     <div className={cx(styles.dropdown)}>
-      <div className={'uppercase text-lg font-extrabold btn-3d rounded-lg'}>
+      <div
+        className={cx(
+          props.flavour === 'white' && 'btn-3d-white',
+          props.flavour === 'black' && 'btn-3d-black',
+          'uppercase text-lg font-extrabold rounded-lg'
+        )}
+      >
         <div className="grid grid-cols-8 w-64">
           <div
             className={'center-child col-span-6 whitespace-no-wrap py-2 px-4'}
@@ -58,7 +65,9 @@ const Dropdown: React.FC<TProps> = (props): JSX.Element => {
                   }
                   tabIndex={0}
                 >
-                  <div className={'text-xl font-medium uppercase'}>{typeof e === 'string' ? e : e.name}</div>
+                  <div className={'text-xl font-medium uppercase'}>
+                    {typeof e === 'string' ? e : e.name}
+                  </div>
                 </div>
                 {i < props.content.length - 1 && <hr />}
               </div>

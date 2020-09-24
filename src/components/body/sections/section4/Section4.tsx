@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from './section4.module.css';
 import cx from 'classnames';
 import content from '../../../../data/content.json';
+import Button3d from '../../../buttons/Button3d';
 
 interface TProps {}
 
@@ -28,6 +29,7 @@ const Section4: React.FC<TProps> = (): JSX.Element => {
             {content.projects.map((e, i, arr) => (
               <div
                 key={e.name}
+                tabIndex={0}
                 className={cx(
                   styles['image-wrapper'],
                   i === 0 && 'sm:rounded-tl-lg sm:rounded-t-none rounded-t-lg',
@@ -35,10 +37,22 @@ const Section4: React.FC<TProps> = (): JSX.Element => {
                   i === arr.length - 2 && 'sm:rounded-bl-lg rounded-none',
                   i === arr.length - 1 &&
                     'sm:rounded-bl-none rounded-bl-lg rounded-br-lg',
-                  'center-child cursor-pointer overflow-hidden'
+                  'center-child cursor-pointer overflow-hidden relative'
                 )}
               >
                 <img src={'assets/images/projects/' + e.image} alt={e.name} />
+                <div className={cx(styles.label, 'rounded-t-lg bg-customText')}>
+                  <div className={'p-5'}>
+                    <div className={'text-3xl font-bold text-customBg'}>
+                      {e.name}
+                    </div>
+                    <div className={'text-xl text-gray-500'}>{e.service}</div>
+                    <div className={'flex justify-between items-center'}>
+                      <div>{e.organisation}</div>
+                      <Button3d label={'Visit'} flavour={'black'} />
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

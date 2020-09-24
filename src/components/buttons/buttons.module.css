@@ -1,2 +1,7 @@
-.dropdown{
+.dropdown {
+}
+.button3d {
+}
+.button3d button > div {
+  min-width: 8rem;
 }
