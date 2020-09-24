@@ -20,6 +20,7 @@
       }
 
       #H {
+	font-family: Herculanum;
         animation: gradient ease-in-out 5s infinite;
         animation-direction: alternate;
       }
