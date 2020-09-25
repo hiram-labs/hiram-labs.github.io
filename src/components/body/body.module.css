@@ -1,8 +1,13 @@
-/* hide scrollbar */
-::-webkit-scrollbar {
-  display: none;
+/* scrollbar styles */
+.container ::-webkit-scrollbar {
+  visibility: hidden;
+  width: 10px;
+  height: 10px;
+  background: transparent;
 }
+.container ::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
 .container {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
