@@ -72,7 +72,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
                   e.details
                     ? 'hvr-icon-wobble-vertical'
                     : 'hvr-underline-from-center',
-                  'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+                  'whitespace-no-wrap uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
                 )}
                 key={e.name + '-sticky'}
               >
@@ -108,7 +108,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
                 e.details
                   ? 'hvr-icon-wobble-vertical'
                   : 'hvr-underline-from-center',
-                'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+                'whitespace-no-wrap uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
               )}
               key={e.name}
               tabIndex={0}
@@ -189,7 +189,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
                   e.details
                     ? 'hvr-icon-wobble-vertical'
                     : 'hvr-underline-from-center',
-                  'uppercase text-lg font-extrabold cursor-pointer'
+                  'whitespace-no-wrap uppercase text-lg font-extrabold cursor-pointer'
                 )}
                 key={e.name}
                 tabIndex={0}
@@ -220,7 +220,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
                 e.details
                   ? 'hvr-icon-wobble-vertical'
                   : 'hvr-underline-from-center',
-                'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+                'whitespace-no-wrap uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
               )}
               key={e.name}
               tabIndex={0}
