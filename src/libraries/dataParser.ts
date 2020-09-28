@@ -25,9 +25,9 @@ export const stringHalfer = (str: string) => {
  * @param Array The array to split into half
  * @returns array with two subarrays the first array contains the first half of the argument and the second array contains the second half
  */
-export const arrayHalfer = (arr: Array<string>) => {
+export function arrayHalfer<T>(arr: T[]) {
   return [
     arr.slice().splice(0, Math.floor(arr.length / 2)),
     arr.slice().splice(Math.floor(arr.length / 2), arr.length + 1)
   ];
-};
+}

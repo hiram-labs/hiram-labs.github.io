@@ -6,7 +6,51 @@
 /* adds lato fonts from google font api */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+/* centers a div */
+@variants responsive {
+  .center-child {
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+  }
+}
+
 /* custom style classes */
+/* under or overline in multi colors */
+.line-1::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10rem;
+  height: 8px;
+  border-radius: 1rem;
+  background: theme('colors.customComplementaryGreen');
+}
+.line-2::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10rem;
+  height: 8px;
+  border-radius: 1rem;
+  background: theme('colors.customComplementaryBlue');
+}
+.line-3::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10rem;
+  height: 8px;
+  border-radius: 1rem;
+  background: theme('colors.customComplementaryPink');
+}
+
 /* text shadow */
 @responsive {
   .text-shadow {
@@ -24,18 +68,56 @@
   .text-shadow-2xl {
     text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 1);
   }
-
+  .text-shadow-3d {
+    text-shadow: 0px 0.5px 0px #c0c0c0, 0px 1px 0px #b0b0b0,
+      0px 1.5px 0px #a0a0a0, 0px 2px 0px #909090,
+      0px 2.5px 5px rgba(0, 0, 0, 0.6);
+  }
   .text-shadow-none {
     text-shadow: none;
   }
 }
 
-/* centers a div */
-@variants responsive {
-  .center-child {
-    @apply flex;
-    @apply justify-center;
-    @apply items-center;
+/* button with shadow and press animation */
+@responsive {
+  .btn-3d-white {
+    cursor: pointer;
+    text-shadow: 0px 0.5px 0px #c0c0c0, 0px 1px 0px #b0b0b0,
+      0px 1.5px 0px #a0a0a0, 0px 2px 0px #909090,
+      0px 2.5px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0.5px 0px #c0c0c0, 0px 1px 0px #b0b0b0,
+      0px 1.5px 0px #a0a0a0, 0px 2px 0px #909090,
+      0px 2.5px 5px rgba(0, 0, 0, 0.5) !important;
+    border: 2.5px solid theme('colors.customText');
+    position: relative;
+    transition: all ease 1s;
+  }
+  .btn-3d-black {
+    cursor: pointer;
+    box-shadow: 0px 0.5px 0px theme('colors.customBg'),
+      0px 1px 0px theme('colors.customBg'),
+      0px 1.5px 0px theme('colors.customBg'), 0px 2px 0px #909090,
+      0px 2.5px 5px rgba(0, 0, 0, 0.5) !important;
+    border: 2.5px solid theme('colors.customBg');
+    position: relative;
+    transition: all ease 1s;
+  }
+  .btn-3d-white:active,
+  .btn-3d-white:focus,
+  .btn-3d-black:active,
+  .btn-3d-black:focus {
+    outline: none !important;
+    box-shadow: 0 3px 0 theme('colors.customComplementaryBlue') !important;
+    border-image-slice: 1;
+    animation: btn-active 0.25s;
+  }
+}
+@keyframes btn-active {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 1.5px;
   }
 }
 
@@ -48,7 +130,24 @@
 @keyframes slide-in-top {
   from {
     opacity: 0;
-    transform: translateY(-50%);
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* slides div in from bottom with fade in */
+@variants responsive {
+  .animate-slide-in-bottom {
+    animation: slide-in-bottom 0.75s;
+  }
+}
+@keyframes slide-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -110,7 +209,7 @@
 /* Fade div out and hide  */
 @variants responsive {
   .animate-fade-in {
-    animation: custom-fade-in 1s;
+    animation: custom-fade-in 1.5s;
   }
 }
 @keyframes custom-fade-in {
@@ -236,4 +335,89 @@
   animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+}
+.hvr-icon-wobble-horizontal:focus {
+  outline: none;
+}
+
+/* Icon Wobble Vertical */
+@-webkit-keyframes hvr-icon-wobble-vertical {
+  16.65% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+  33.3% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes hvr-icon-wobble-vertical {
+  16.65% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+  33.3% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.hvr-icon-wobble-vertical {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-icon-wobble-vertical .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.hvr-icon-wobble-vertical:hover .hvr-icon,
+.hvr-icon-wobble-vertical:focus .hvr-icon,
+.hvr-icon-wobble-vertical:active .hvr-icon {
+  -webkit-animation-name: hvr-icon-wobble-vertical;
+  animation-name: hvr-icon-wobble-vertical;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+.hvr-icon-wobble-vertical:focus {
+  outline: none;
 }

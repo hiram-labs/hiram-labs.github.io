@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import styles from './header.module.css';
 import cx from 'classnames';
-import { FiGrid } from 'react-icons/fi';
+import { FiGrid, FiChevronDown, FiArrowDown } from 'react-icons/fi';
 import content from '../../data/content.json';
 import { stringHalfer, arrayHalfer } from '../../libraries/dataParser';
 import { styleAttributeEditor } from '../../libraries/domLogic';
@@ -23,19 +23,21 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
     useContext(AppContext).scrollDirection?.(props.scrollTriggerValue!) === 'UP'
       ? true
       : false; // gets users scroll direction from dataStore
-
   const screenSize = useContext(AppContext).breakpoint; // get the current screen size
-  console.log(screenSize);
 
   // handles navbar fade and slide out logic on scroll
-  screenSize === 'lg' &&
-    styleAttributeEditor({
-      element: thisComponent.current?.children.item(1)?.children,
-      style:
-        scrollUnit! < props.scrollTriggerValue!
-          ? `opacity: ${1 - scrollUnit! / props.scrollTriggerValue!}`
-          : 'opacity: 0'
-    });
+  screenSize === 'lg' || screenSize === 'xl'
+    ? styleAttributeEditor({
+        element: thisComponent.current?.children.item(1)?.children,
+        style:
+          scrollUnit! < props.scrollTriggerValue!
+            ? `opacity: ${1 - scrollUnit! / props.scrollTriggerValue!}`
+            : 'opacity: 0'
+      })
+    : styleAttributeEditor({
+        element: thisComponent.current?.children.item(1)?.children,
+        style: 'opacity: 1'
+      });
 
   return (
     <div
@@ -47,40 +49,81 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
       )}
     >
       {/* big screen navbar */}
+      {/* on scroll big screen navbar */}
       <div
         className={cx(
-          trigger ? 'lg:opacity-100 ' : null,
-          'lg:grid lg:fixed top-0 lg:w-screen hidden opacity-0 border-8'
+          trigger ? 'lg:opacity-100 animate-slide-in-top z-50' : null,
+          'lg:fixed lg:w-screen lg:center-child top-0 bg-customSecondary shadow-2xl opacity-0 hidden'
         )}
       >
-        hello
-      </div>
-      <div
-        className={cx(
-          trigger ? 'lg:max-w-none' : null,
-          'grid grid-cols-10 gap-5 max-w-6xl my-10'
-        )}
-      >
-        {/* sets half of the links left */}
-        {
-          <div
-            className={
-              'lg:flex hidden animate-slide-in-left space-x-20 col-span-4 items-center justify-between'
-            }
-          >
-            {arrayHalfer(content.navLinks)[0].map((e) => (
+        <div
+          className={cx(
+            styles.wrapper,
+            'flex items-center justify-between mx-10 my-4'
+          )}
+        >
+          <div className={'flex justify-start space-x-20 col-start-1 w-16'}>
+            {logoSvg}
+          </div>
+          <div className={'flex justify-end space-x-20 col-start-2'}>
+            {content.navLinks.map((e) => (
               <div
-                className={
-                  'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer'
-                }
-                key={e}
-                tabIndex={0}
+                className={cx(
+                  e.details
+                    ? 'hvr-icon-wobble-vertical'
+                    : 'hvr-underline-from-center',
+                  'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+                )}
+                key={e.name + '-sticky'}
               >
-                {e}
+                {e.name}
+                {e.details && (
+                  <FiChevronDown
+                    className={
+                      'inline ml-1 text-customComplementaryGreen hvr-icon'
+                    }
+                  />
+                )}
               </div>
             ))}
           </div>
-        }
+        </div>
+      </div>
+      {/* onload big screen navbar */}
+      <div
+        className={cx(
+          trigger ? 'lg:max-w-none' : null,
+          'sm:my-8 grid grid-cols-10 gap-5 max-w-6xl my-5'
+        )}
+      >
+        {/* sets half of the links left */}
+        <div
+          className={
+            'lg:flex hidden animate-slide-in-left space-x-20 col-span-4 items-center justify-between'
+          }
+        >
+          {arrayHalfer(content.navLinks)[0].map((e) => (
+            <div
+              className={cx(
+                e.details
+                  ? 'hvr-icon-wobble-vertical'
+                  : 'hvr-underline-from-center',
+                'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+              )}
+              key={e.name}
+              tabIndex={0}
+            >
+              {e.name}
+              {e.details && (
+                <FiChevronDown
+                  className={
+                    'inline ml-1 text-customComplementaryGreen hvr-icon'
+                  }
+                />
+              )}
+            </div>
+          ))}
+        </div>
         {/* sets the company logo in the middle for large screens and handles small screen navbar logic */}
         <div
           className={cx(
@@ -100,23 +143,16 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             {/* medium screen company name left */}
             <div
               className={
-                'lg:hidden sm:flex hidden animate-slide-in-left justify-end whitespace-no-wrap text-xl uppercase font-extrabold font-Herculanum'
+                'lg:hidden sm:flex hidden animate-slide-in-left justify-end whitespace-no-wrap text-xl uppercase font-extrabold text-shadow-3d font-Herculanum'
               }
             >
               {stringHalfer(content.companyName)[0]}
             </div>
-            <div>
-              {React.createElement(
-                require('../../../dev/assets/images/logo/log_raw.svg'),
-                {
-                  className: 'nav-logo w-20 sm:animate-grow'
-                }
-              )}
-            </div>
+            <div>{logoSvg}</div>
             {/* medium screen company name right */}
             <div
               className={
-                'lg:hidden sm:flex hidden animate-slide-in-right justify-start whitespace-no-wrap text-xl uppercase font-extrabold font-Herculanum'
+                'lg:hidden sm:flex hidden animate-slide-in-right justify-start whitespace-no-wrap text-xl uppercase font-extrabold text-shadow-3d font-Herculanum'
               }
             >
               {stringHalfer(content.companyName)[1]}
@@ -124,7 +160,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             {/* small screen company name */}
             <div
               className={
-                'sm:hidden animate-slide-in-right whitespace-no-wrap text-xl uppercase font-extrabold font-Herculanum ml-2'
+                'sm:hidden animate-slide-in-right whitespace-no-wrap text-xl uppercase font-extrabold font-Herculanum text-shadow-3d ml-2'
               }
             >
               <div>{stringHalfer(content.companyName)[0]}</div>
@@ -149,37 +185,57 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
           >
             {content.navLinks.map((e) => (
               <div
-                className={
-                  'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer'
-                }
-                key={e}
+                className={cx(
+                  e.details
+                    ? 'hvr-icon-wobble-vertical'
+                    : 'hvr-underline-from-center',
+                  'uppercase text-lg font-extrabold cursor-pointer'
+                )}
+                key={e.name}
                 tabIndex={0}
               >
-                {e}
+                <span>
+                  {e.name}
+                  {e.details && (
+                    <FiArrowDown
+                      className={
+                        'inline ml-1 text-customComplementaryGreen hvr-icon'
+                      }
+                    />
+                  )}
+                </span>
               </div>
             ))}
           </div>
         </div>
         {/* sets remaining of the links right */}
-        {
-          <div
-            className={
-              'lg:flex hidden animate-slide-in-right space-x-20 col-span-4 items-center justify-between'
-            }
-          >
-            {arrayHalfer(content.navLinks)[1].map((e) => (
-              <div
-                className={
-                  'hvr-underline-from-center uppercase text-lg font-extrabold cursor-pointer'
-                }
-                key={e}
-                tabIndex={0}
-              >
-                {e}
-              </div>
-            ))}
-          </div>
-        }
+        <div
+          className={
+            'lg:flex hidden animate-slide-in-right space-x-20 col-span-4 items-center justify-between'
+          }
+        >
+          {arrayHalfer(content.navLinks)[1].map((e) => (
+            <div
+              className={cx(
+                e.details
+                  ? 'hvr-icon-wobble-vertical'
+                  : 'hvr-underline-from-center',
+                'uppercase text-lg font-extrabold cursor-pointer text-shadow-3d'
+              )}
+              key={e.name}
+              tabIndex={0}
+            >
+              {e.name}
+              {e.details && (
+                <FiChevronDown
+                  className={
+                    'inline ml-1 text-customComplementaryGreen hvr-icon'
+                  }
+                />
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -187,7 +243,15 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
 
 // sets default props
 Header.defaultProps = {
-  scrollTriggerValue: 50
+  scrollTriggerValue: 60
 };
+
+// create a react component from the logo svg
+const logoSvg = React.createElement(
+  require('../../../dev/assets/images/logo/log_raw.svg'),
+  {
+    className: 'nav-logo w-20 sm:animate-grow'
+  }
+);
 
 export default Header;

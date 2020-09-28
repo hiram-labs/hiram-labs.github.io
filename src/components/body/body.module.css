@@ -1,12 +1,13 @@
-.container img {
-  animation: bounce 1s infinite alternate;
-  -webkit-animation: bounce 1s infinite alternate;
+/* scrollbar styles */
+.container ::-webkit-scrollbar {
+  display: none;
+  width: 10px;
+  height: 10px;
+  background: transparent;
 }
-@keyframes bounce {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-15px);
-  }
+.container ::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.container {
 }
