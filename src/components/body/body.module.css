@@ -1,6 +1,6 @@
 /* scrollbar styles */
 .container ::-webkit-scrollbar {
-  visibility: hidden;
+  display: none;
   width: 10px;
   height: 10px;
   background: transparent;

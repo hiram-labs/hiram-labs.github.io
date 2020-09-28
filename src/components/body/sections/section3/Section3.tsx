@@ -40,7 +40,7 @@ const Section3: React.FC<TProps> = (): JSX.Element => {
             }
           >
             {content.tech.map((e, i, arr) => (
-              <div className={cx(i === arr.length - 1 && 'pr-32')} key={e.name}>
+              <div className={cx(i === arr.length - 1 && 'pr-16')} key={e.name}>
                 {React.createElement(
                   require('../../../../../dev/assets/images/tech/' + e.image),
                   {
