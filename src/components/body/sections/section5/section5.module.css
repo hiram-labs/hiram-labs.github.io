@@ -1,0 +1,12 @@
+.section5 {
+  max-width: 1500px;
+}
+
+.image {
+  /* border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem; */
+  background-image: url('/assets/images/backgrounds/contact.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
