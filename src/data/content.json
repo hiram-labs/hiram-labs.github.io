@@ -56,5 +56,30 @@
     }
   ],
   "contactHeader": "talk to us about questions you have.",
-  "contactSub": "Our team is happy to talk to you about your ideas or projects you have coming up."
+  "contactSub": "Our team is happy to talk to you about your ideas or projects you have coming up.",
+  "blogHeader": "read some of our blog posts.",
+  "blogSub": "We release at least one article a month and this mostly covers a topic in the web tech space.",
+  "blog": [
+    {
+      "date": "1 Oct 2020",
+      "image": "post_1.jpg",
+      "category": "Post",
+      "title": "Rank Top In Your City",
+      "hashtags": ["seo", "website", "search"]
+    },
+    {
+      "date": "3 Nov 2020",
+      "image": "post_2.jpg",
+      "category": "Post",
+      "title": "Coming of AI",
+      "hashtags": ["technology", "artificial", "intelligence"]
+    },
+    {
+      "date": "2 Dec 2020",
+      "image": "post_3.jpg",
+      "category": "Post",
+      "title": "The Open Source Model",
+      "hashtags": ["community", "free", "open"]
+    }
+  ]
 }

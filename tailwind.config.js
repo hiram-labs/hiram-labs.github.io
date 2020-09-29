@@ -33,8 +33,9 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
 
-      customSecondary: '#2d3748',
-      customBg: '#313639',
+      customTetiary: '#191230',
+      customSecondary: '#241944',
+      customBg: '#0f0e17',
       customText: '#fbf7f5',
       customComplementaryBlue: '#54cae7',
       customComplementaryPink: '#e75480',

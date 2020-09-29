@@ -6,6 +6,7 @@ import Section2 from './sections/section2/Section2';
 import Section3 from './sections/section3/Section3';
 import Section4 from './sections/section4/Section4';
 import Section5 from './sections/section5/Section5';
+import Section6 from './sections/section6/Section6';
 
 interface TProps {}
 
@@ -38,7 +39,7 @@ const Body: React.FC<TProps> = (): JSX.Element => {
       </div>
       {/* space*/}
       <div className={'w-screen center-child bg-customText text-customBg'}>
-        <div className={'h-32'} />
+        <Section6 />
       </div>
     </div>
   );

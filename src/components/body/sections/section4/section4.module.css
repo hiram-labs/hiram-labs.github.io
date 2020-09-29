@@ -31,9 +31,10 @@
 .image-wrapper:hover .label,
 .image-wrapper:focus .label {
   bottom: 0%;
-  opacity: 1;
+  opacity: 0.95;
   transition: all 0.5s ease-in-out;
 }
+
 .image-wrapper:focus {
   outline: none;
 }

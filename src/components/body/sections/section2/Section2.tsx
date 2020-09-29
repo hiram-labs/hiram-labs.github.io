@@ -26,7 +26,7 @@ const Section2: React.FC<TProps> = (): JSX.Element => {
           >
             <div
               className={
-                'text-4xl font-bold leading-tight relative line-2 pt-5'
+                'sm:text-4xl text-3xl font-bold leading-tight relative line-2 pt-5'
               }
             >
               {content.introHeader}
