@@ -6,7 +6,7 @@ import Button3d from '../../../buttons/Button3d';
 
 interface TProps {}
 /**
- * Section1 of Body componet
+ * Section5 of Body componet
  *
  */
 const Section5: React.FC<TProps> = (): JSX.Element => {
@@ -17,7 +17,7 @@ const Section5: React.FC<TProps> = (): JSX.Element => {
           <div className={'lg:mx-20 mx-10 max-w-3xl self-start'}>
             <div
               className={
-                'text-4xl font-bold leading-tight relative line-1 pt-5'
+                'sm:text-4xl text-3xl font-bold leading-tight relative line-2 pt-5'
               }
             >
               {content.contactHeader}
@@ -27,7 +27,7 @@ const Section5: React.FC<TProps> = (): JSX.Element => {
           <div className={'w-full'}>
             <div
               className={
-                'sm:grid sm:grid-cols-2 lg:mx-20 mx-10 mt-10 bg-customSecondary shadow-2xl rounded-lg overflow-hidden'
+                'sm:grid sm:grid-cols-2 lg:mx-20 mx-10 mt-10 bg-customTetiary shadow-2xl rounded-lg overflow-hidden'
               }
             >
               <div className={cx(styles.image, 'sm:block hidden')} />
@@ -75,6 +75,7 @@ const Section5: React.FC<TProps> = (): JSX.Element => {
                         className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="email"
                         type="email"
+                        placeholder="j.doe@email.com"
                       />
                     </div>
                   </div>

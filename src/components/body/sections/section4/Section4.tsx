@@ -7,7 +7,7 @@ import Button3d from '../../../buttons/Button3d';
 interface TProps {}
 
 /**
- * Section3 of Body componet
+ * Section4 of Body componet
  *
  */
 const Section4: React.FC<TProps> = (): JSX.Element => {
@@ -18,7 +18,7 @@ const Section4: React.FC<TProps> = (): JSX.Element => {
           <div className={'lg:mx-20 mx-10 max-w-3xl self-start'}>
             <div
               className={
-                'text-4xl font-bold leading-tight relative line-1 pt-5'
+                'sm:text-4xl text-3xl font-bold leading-tight relative line-1 pt-5'
               }
             >
               {content.projectsHeader}
@@ -43,7 +43,9 @@ const Section4: React.FC<TProps> = (): JSX.Element => {
                 <img src={'assets/images/projects/' + e.image} alt={e.name} />
                 <div className={cx(styles.label, 'rounded-t-lg bg-customText')}>
                   <div className={'p-5'}>
-                    <div className={'text-3xl font-bold text-customBg'}>
+                    <div
+                      className={'md:text-3xl text-2xl font-bold text-customBg'}
+                    >
                       {e.name}
                     </div>
                     <div className={'text-xl text-gray-500'}>{e.service}</div>

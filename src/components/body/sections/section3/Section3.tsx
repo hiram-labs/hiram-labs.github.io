@@ -21,7 +21,7 @@ const Section3: React.FC<TProps> = (): JSX.Element => {
         >
           <div
             className={
-              'self-start text-4xl font-bold leading-tight line-3 pt-5 relative'
+              'sm:text-4xl text-3xl self-start font-bold leading-tight line-3 pt-5 relative'
             }
           >
             {content.techHeader}
