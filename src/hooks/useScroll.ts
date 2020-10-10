@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 /**
- * Listens for when an element parsed as parameter enters the viewport
+ * Listens for scroll of document
  * @param threshold number at which point hook determines direction of scroll
  * @returns object with direction to indicate up or down relative to threshold params and
  * unit for value of amount of document scrolled y direction wise in pixels

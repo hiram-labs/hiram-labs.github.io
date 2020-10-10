@@ -31,16 +31,24 @@ const Section6: React.FC<TProps> = (): JSX.Element => {
           >
             {content.blog.map((e) => (
               <div key={e.title} className={'center-child'}>
-                <div className="max-w-lg rounded-lg overflow-hidden hover:shadow-lg bg-white my-2">
+                <div
+                  className={
+                    'max-w-lg rounded-lg overflow-hidden hover:shadow-lg bg-white my-2'
+                  }
+                >
                   <div className={'h-40 overflow-hidden'}>
                     <img
-                      className="w-full"
+                      className={'w-full'}
                       src={'assets/images/blog/' + e.image}
                       alt="post image"
                     />
                   </div>
-                  <div className="p-4 md:p-6">
-                    <p className="text-blue-500 font-semibold text-xs mb-1 leading-none">
+                  <div className={'p-4 md:p-6'}>
+                    <p
+                      className={
+                        'text-blue-500 font-semibold text-xs mb-1 leading-none'
+                      }
+                    >
                       {e.category}
                     </p>
                     <a
@@ -51,15 +59,21 @@ const Section6: React.FC<TProps> = (): JSX.Element => {
                     >
                       <h3>{e.title}</h3>
                     </a>
-                    <div className="text-sm flex items-center">
+                    <div className={'text-sm flex items-center'}>
                       <FiClock className={'mr-2'} />
                       <p className="leading-none">{e.date}</p>
                     </div>
-                    <div className="mt-6 pt-3 flex flex-no-wrap border-t overflow-scroll">
+                    <div
+                      className={
+                        'mt-6 pt-3 flex flex-no-wrap border-t overflow-scroll'
+                      }
+                    >
                       {e.hashtags.map((e) => (
                         <div
                           key={e}
-                          className="text-xs mr-2 my-1 uppercase tracking-wider border rounded-full px-2 text-indigo-600 border-indigo-600 hover:bg-indigo-600 hover:text-indigo-100 cursor-pointer"
+                          className={
+                            'text-xs mr-2 my-1 uppercase tracking-wider border rounded-full px-2 text-indigo-600 border-indigo-600 hover:bg-indigo-600 hover:text-indigo-100 cursor-pointer'
+                          }
                         >
                           {'#' + e}
                         </div>
