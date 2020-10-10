@@ -35,7 +35,7 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
           </div>
           <div
             className={
-              'lg:text-4xl sm:text-2xl text-customComplementaryPink font-bold  text-shadow-xl animate-slide-in-bottom'
+              'lg:text-5xl md:text-4xl sm:text-3xl my-2 neon-text-pink animate-pulse'
             }
           >
             {content.bannerSub}

@@ -33,10 +33,10 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
 
-      customTetiary: '#191230',
-      customSecondary: '#241944',
-      customBg: '#0f0e17',
       customText: '#fbf7f5',
+      customBg: '#0f0e17',
+      customSecondary: '#241944',
+      customTetiary: '#191230',
       customComplementaryBlue: '#54cae7',
       customComplementaryPink: '#e75480',
       customComplementaryGreen: '#54e772',

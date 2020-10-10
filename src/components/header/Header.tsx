@@ -62,9 +62,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
             'flex items-center justify-between mx-10 my-4'
           )}
         >
-          <div className={'flex justify-start space-x-20 col-start-1 w-16'}>
-            {logoSvg}
-          </div>
+          <div>{logoSvg}</div>
           <div className={'flex justify-end space-x-20 col-start-2'}>
             {content.navLinks.map((e) => (
               <div
@@ -250,7 +248,7 @@ Header.defaultProps = {
 const logoSvg = React.createElement(
   require('../../../dev/assets/images/logo/log_raw.svg'),
   {
-    className: 'nav-logo w-20 sm:animate-grow'
+    className: 'nav-logo w-20 sm:animate-grow overflow-visible'
   }
 );
 

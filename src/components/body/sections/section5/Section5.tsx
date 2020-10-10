@@ -30,7 +30,13 @@ const Section5: React.FC<TProps> = (): JSX.Element => {
                 'sm:grid sm:grid-cols-2 lg:mx-20 mx-10 mt-10 bg-customTetiary shadow-2xl rounded-lg overflow-hidden'
               }
             >
-              <div className={cx(styles.image, 'sm:block hidden')} />
+              <div className={'sm:center-child hidden'}>
+                <img
+                  src="/assets/images/backgrounds/contact.png"
+                  alt="contact us illustration"
+                  style={{ maxHeight: '400px' }}
+                />
+              </div>
               <div className={'p-8'}>
                 <form>
                   <div className="flex flex-wrap -mx-3 mb-6">

@@ -3,8 +3,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* adds lato fonts from google font api */
+/* adds lato and Dancing fonts from google font api */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 
 /* centers a div */
 @variants responsive {
@@ -27,6 +28,11 @@
   height: 8px;
   border-radius: 1rem;
   background: theme('colors.customComplementaryGreen');
+  box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
+    0 0 2rem theme('colors.customComplementaryGreen'),
+    inset 0 0 2rem theme('colors.customComplementaryGreen'),
+    0 0 4rem theme('colors.customComplementaryGreen'),
+    inset 0 0 4rem theme('colors.customComplementaryGreen');
 }
 .line-2::before {
   content: '';
@@ -38,6 +44,11 @@
   height: 8px;
   border-radius: 1rem;
   background: theme('colors.customComplementaryBlue');
+  box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
+    0 0 2rem theme('colors.customComplementaryBlue'),
+    inset 0 0 2rem theme('colors.customComplementaryBlue'),
+    0 0 4rem theme('colors.customComplementaryBlue'),
+    inset 0 0 4rem theme('colors.customComplementaryBlue');
 }
 .line-3::before {
   content: '';
@@ -49,6 +60,11 @@
   height: 8px;
   border-radius: 1rem;
   background: theme('colors.customComplementaryPink');
+  box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
+    0 0 2rem theme('colors.customComplementaryPink'),
+    inset 0 0 2rem theme('colors.customComplementaryPink'),
+    0 0 4rem theme('colors.customComplementaryPink'),
+    inset 0 0 4rem theme('colors.customComplementaryPink');
 }
 
 /* text shadow */
@@ -118,6 +134,40 @@
   }
   to {
     top: 1.5px;
+  }
+}
+
+@variants responsive {
+  .neon-text-pink {
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+    animation: flicker 1.5s infinite alternate;
+  }
+}
+/* Animate neon flicker */
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px theme('colors.customComplementaryPink'),
+      0 0 10px theme('colors.customComplementaryPink'),
+      0 0 15px theme('colors.customComplementaryPink'),
+      0 0 20px theme('colors.customComplementaryPink'),
+      0 0 25px theme('colors.customComplementaryPink'),
+      0 0 30px theme('colors.customComplementaryPink');
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: 0 0 5px theme('colors.customComplementaryPink'),
+      0 0 5px theme('colors.customComplementaryPink'),
+      0 0 10px theme('colors.customComplementaryPink');
   }
 }
 
@@ -209,7 +259,7 @@
 /* Fade div out and hide  */
 @variants responsive {
   .animate-fade-in {
-    animation: custom-fade-in 1.5s;
+    animation: custom-fade-in 2.5s;
   }
 }
 @keyframes custom-fade-in {
