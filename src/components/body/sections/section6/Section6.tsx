@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './section6.module.css';
 import cx from 'classnames';
 import { FiClock } from 'react-icons/fi';
 import content from '../../../../data/content.json';
+import { useInView } from '../../../../hooks';
 
 interface TProps {}
 /**
@@ -10,19 +11,30 @@ interface TProps {}
  *
  */
 const Section6: React.FC<TProps> = (): JSX.Element => {
+  const currentSection = useRef(null); // gets ref for section
+  const inView = useInView(currentSection);
+
   return (
     <>
-      <div className={cx(styles.section6, 'w-full')}>
+      <div ref={currentSection} className={cx(styles.section6, 'w-full')}>
         <div className={'lg:mx-20 mx-10 my-20'}>
           <div className={'max-w-3xl'}>
             <div
-              className={
+              className={cx(
+                inView ? 'animate-slide-in-top' : null,
                 'sm:text-4xl text-3xl font-bold leading-tight relative line-3 pt-5'
-              }
+              )}
             >
               {content.blogHeader}
             </div>
-            <div className={'py-4 text-xl'}>{content.blogSub}</div>
+            <div
+              className={cx(
+                inView ? 'animate-slide-in-bottom' : null,
+                'py-4 text-xl'
+              )}
+            >
+              {content.blogSub}
+            </div>
           </div>
           <div
             className={
@@ -30,20 +42,36 @@ const Section6: React.FC<TProps> = (): JSX.Element => {
             }
           >
             {content.blog.map((e) => (
-              <div key={e.title} className={'center-child'}>
+              <div
+                key={e.title}
+                className={cx(
+                  inView ? 'animate-fade-in' : null,
+                  'center-child'
+                )}
+              >
                 <div
                   className={
                     'max-w-lg rounded-lg overflow-hidden hover:shadow-lg bg-white my-2'
                   }
                 >
-                  <div className={'h-40 overflow-hidden'}>
+                  <div
+                    className={cx(
+                      inView ? 'animate-grow' : null,
+                      'h-40 overflow-hidden'
+                    )}
+                  >
                     <img
                       className={'w-full'}
                       src={'assets/images/blog/' + e.image}
                       alt="post image"
                     />
                   </div>
-                  <div className={'p-4 md:p-6'}>
+                  <div
+                    className={cx(
+                      inView ? 'animate-slide-in-bottom' : null,
+                      'p-4 md:p-6'
+                    )}
+                  >
                     <p
                       className={
                         'text-blue-500 font-semibold text-xs mb-1 leading-none'

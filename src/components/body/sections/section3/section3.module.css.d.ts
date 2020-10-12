@@ -3,7 +3,6 @@ declare const styles: {
   readonly "marquee-content": string;
   readonly "scrolling": string;
   readonly "section3": string;
-  readonly "tech-images": string;
 };
 export = styles;
 

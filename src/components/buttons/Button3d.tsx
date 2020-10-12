@@ -20,10 +20,10 @@ const Button3d: React.FC<TProps> = (props): JSX.Element => {
           className={cx(
             props.flavour === 'white' && 'btn-3d-white',
             props.flavour === 'black' && 'btn-3d-black',
-            'hvr-icon-wobble-horizontal uppercase text-lg font-extrabold py-2 px-4 rounded-lg'
+            'sm:text-lg uppercase text-sm hvr-icon-wobble-horizontal font-extrabold py-2 px-4 rounded-lg'
           )}
         >
-          <div className={'center-child gap-2'}>
+          <div className={'center-child gap-2 sm:w-32'}>
             <div>{props.label}</div>
             <FiArrowRight className={'hvr-icon text-lg'} />
           </div>

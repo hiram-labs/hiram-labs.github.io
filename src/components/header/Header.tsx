@@ -248,7 +248,10 @@ Header.defaultProps = {
 const logoSvg = React.createElement(
   require('../../../dev/assets/images/logo/log_raw.svg'),
   {
-    className: 'nav-logo w-20 sm:animate-grow overflow-visible'
+    className: `${cx(
+      styles['nav-logo'],
+      'w-20 sm:animate-grow overflow-visible'
+    )}`
   }
 );
 
