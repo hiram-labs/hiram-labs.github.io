@@ -1,4 +1,4 @@
-import React,{ useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './section3.module.css';
 import cx from 'classnames';
 import content from '../../../../data/content.json';
@@ -31,48 +31,55 @@ const Section3: React.FC<TProps> = (): JSX.Element => {
   const currentSection = useRef(null); // gets ref for section
   const inView = useInView(currentSection);
 
+  useEffect(() => {
+    // handle the marquee auto scroll event
+    if (inView) {
+      const root = document.querySelector('.' + cx(styles.section3))!;
+      const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+        '--marquee-elements-displayed'
+      );
+      const marqueeContent = document.querySelector(
+        '.' + cx(styles['marquee-content'])
+      )!;
+
+      root.setAttribute(
+        'style',
+        `--marquee-elements: ${marqueeContent.children.length}`
+      );
+
+      for (let i = 0; i < +marqueeElementsDisplayed; i++) {
+        marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+      }
+    }
+  }, [inView]);
+
   return (
     <>
-      <div ref={currentSection} className={cx(styles.section3, 'my-20 flex-col w-full')}>
+      <div ref={currentSection} className={cx(styles.section3, 'py-20 w-full')}>
         <div
           className={
             'lg:mx-20 self-start center-child flex-col mx-10 max-w-4xl'
           }
         >
           <div
-            className={
+            className={cx(
+              inView ? 'animate-slide-in-top' : null,
               'sm:text-4xl text-3xl self-start font-bold leading-tight line-3 pt-5 relative'
-            }
+            )}
           >
             {content.techHeader}
           </div>
-          <div className={'self-start py-4 text-xl'}>{content.techSub}</div>
-        </div>
-        {/* <div
-          className={cx(
-            styles['tech-images'],
-            'lg:mx-20 mx-10 mt-10 overflow-hidden relative'
-          )}
-        >
           <div
-            className={
-              'w-full flex items-center space-x-16 pb-2 overflow-scroll'
-            }
+            className={cx(
+              inView ? 'animate-slide-in-bottom' : null,
+              'self-start py-4 text-xl'
+            )}
           >
-            {content.tech.map((e, i, arr) => (
-              <div className={cx(i === arr.length - 1 && 'pr-16')} key={e.name}>
-                {React.createElement(
-                  require('../../../../../dev/assets/images/tech/' + e.image),
-                  {
-                    className: 'w-20 sm:animate-grow'
-                  }
-                )}
-              </div>
-            ))}
+            {content.techSub}
           </div>
-        </div> */}
+        </div>
         <div className={cx(styles.marquee, 'lg:mx-20 mx-10 mt-10')}>
-          <ul className={styles['marquee-content']}>
+          <ul className={cx(styles['marquee-content'])}>
             <li>
               <FaGithub />
             </li>

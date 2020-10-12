@@ -22,10 +22,10 @@ const Dropdown: React.FC<TProps> = (props): JSX.Element => {
         className={cx(
           props.flavour === 'white' && 'btn-3d-white',
           props.flavour === 'black' && 'btn-3d-black',
-          'uppercase text-lg font-extrabold rounded-lg'
+          'sm:text-lg uppercase text-sm font-extrabold rounded-lg'
         )}
       >
-        <div className="grid grid-cols-8 w-64">
+        <div className="sm:w-64 grid grid-cols-8">
           <div
             className={'center-child col-span-6 whitespace-no-wrap py-2 px-4'}
             tabIndex={0}
@@ -35,7 +35,7 @@ const Dropdown: React.FC<TProps> = (props): JSX.Element => {
 
           <div
             className={
-              'hvr-icon-wobble-vertical col-span-2 border-l-4 text-2xl rounded-r-lg bg-customSecondary'
+              'sm:text-2xl hvr-icon-wobble-vertical col-span-2 border-l-4 text-lg rounded-r-lg bg-customSecondary'
             }
             tabIndex={0}
             onClick={() => setopenServicesDropdown(!openServicesDropdown)}

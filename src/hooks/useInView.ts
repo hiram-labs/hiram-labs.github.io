@@ -5,7 +5,7 @@ const helper = (param: HTMLDivElement) => {
   if (param) {
     const intViewportHeight = window.innerHeight;
     const elementTopPosition = param.getBoundingClientRect().top;
-    if (elementTopPosition < (intViewportHeight * 70) / 100) {
+    if (elementTopPosition < (intViewportHeight * 80) / 100) {
       return true;
     } else {
       return false;
