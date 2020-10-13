@@ -3,11 +3,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@font-face {
-  font-family: 'Herculanum';
-  src: local('Herculanum'), url(/assets/fonts/Herculanum.ttf) format('truetype');
-}
-
 /* adds lato and Dancing Sript fonts from google font api */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
