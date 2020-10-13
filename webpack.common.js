@@ -37,6 +37,17 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
+      {
         test: /\.(png|jpe?g|gif)$/i,
         use: ['file-loader']
       },
@@ -51,6 +62,6 @@ module.exports = {
   plugins: [
     new TypedCssModulesPlugin({
       globPattern: 'src/components/**/*.css'
-    })
+    }),
   ]
 };

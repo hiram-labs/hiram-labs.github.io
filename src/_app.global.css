@@ -176,6 +176,18 @@
   .animate-slide-in-top {
     animation: slide-in-top 0.75s;
   }
+  .animate-slide-in-top-0 {
+    animation: slide-in-top 0.75s;
+    animation-delay: 0s;
+  }
+  .animate-slide-in-top-1 {
+    animation: slide-in-top 0.75s;
+    animation-delay: 0.25s;
+  }
+  .animate-slide-in-top-2 {
+    animation: slide-in-top 0.75s;
+    animation-delay: 0.5s;
+  }
 }
 @keyframes slide-in-top {
   from {

@@ -41,11 +41,11 @@ const Section6: React.FC<TProps> = (): JSX.Element => {
               'lg:grid-cols-3 sm:grid-cols-2 grid grid-cols-1 gap-6 mt-10'
             }
           >
-            {content.blog.map((e) => (
+            {content.blog.map((e, i) => (
               <div
                 key={e.title}
                 className={cx(
-                  inView ? 'animate-fade-in' : null,
+                  inView ? 'animate-slide-in-top-'+ (i<3?i:2 ): null,
                   'center-child'
                 )}
               >
@@ -55,22 +55,19 @@ const Section6: React.FC<TProps> = (): JSX.Element => {
                   }
                 >
                   <div
-                    className={cx(
-                      inView ? 'animate-grow' : null,
+                    className={
                       'h-40 overflow-hidden'
-                    )}
+                    }
                   >
                     <img
                       className={'w-full'}
-                      src={'assets/images/blog/' + e.image}
+                      src={'assets/compressed/' + e.image}
                       alt="post image"
                     />
                   </div>
                   <div
-                    className={cx(
-                      inView ? 'animate-slide-in-bottom' : null,
-                      'p-4 md:p-6'
-                    )}
+                    className={'p-4 md:p-6'
+                    }
                   >
                     <p
                       className={

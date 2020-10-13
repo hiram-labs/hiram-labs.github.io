@@ -51,7 +51,7 @@ const Section5: React.FC<TProps> = (): JSX.Element => {
                 )}
               >
                 <img
-                  src="/assets/images/backgrounds/contact.png"
+                  src="/assets/compressed/contact.png"
                   alt="contact us illustration"
                   style={{ maxHeight: '400px' }}
                 />
