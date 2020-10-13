@@ -61,11 +61,11 @@ const Dropdown: React.FC<TProps> = (props): JSX.Element => {
               <div key={typeof e === 'string' ? e : e.name}>
                 <div
                   className={
-                    'py-2 px-8 rounded-lg animate-slide-in-left hover:shadow-inner hover:bg-customBg hover:text-customText outline-none'
+                    'sm:px-8 px-4 py-2 rounded-lg animate-grow hover:shadow-inner hover:bg-customBg hover:text-customText outline-none'
                   }
                   tabIndex={0}
                 >
-                  <div className={'text-xl font-medium uppercase'}>
+                  <div className={'text-base font-medium uppercase'}>
                     {typeof e === 'string' ? e : e.name}
                   </div>
                 </div>

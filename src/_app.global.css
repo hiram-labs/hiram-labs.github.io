@@ -142,7 +142,7 @@
     font-weight: bold;
     font-family: 'Dancing Script', cursive;
     color: #fff;
-    animation: flicker 1.5s infinite alternate;
+    animation: flicker 1.5s infinite alternate, custom-grow 0.75s;
   }
 }
 /* Animate neon flicker */
