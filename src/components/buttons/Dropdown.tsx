@@ -54,14 +54,14 @@ const Dropdown: React.FC<TProps> = (props): JSX.Element => {
         <div className={'w-full relative animate-slide-in-top'}>
           <div
             className={
-              'absolute top-0 w-full my-5 border-2 rounded-lg shadow-2xl text-customBg bg-customText z-50 overflow-hidden'
+              'absolute top-0 w-full my-5 border-2 rounded-lg shadow-2xl text-customBg bg-customBgContrast z-50 overflow-hidden'
             }
           >
             {props.content.map((e, i) => (
               <div key={typeof e === 'string' ? e : e.name}>
                 <div
                   className={
-                    'sm:px-8 px-4 py-2 rounded-lg animate-grow hover:shadow-inner hover:bg-customBg hover:text-customText outline-none'
+                    'sm:px-8 px-4 py-2 rounded-lg animate-grow hover:shadow-inner hover:bg-customBg hover:text-customBgContrast outline-none'
                   }
                   tabIndex={0}
                 >

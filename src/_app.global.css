@@ -28,7 +28,8 @@
   height: 8px;
   border-radius: 1rem;
   background: theme('colors.customComplementaryGreen');
-  box-shadow: 0 0 0.5rem theme('colors.customComplementaryGreen'), inset 0 0 0.5rem theme('colors.customComplementaryGreen'),
+  box-shadow: 0 0 0.5rem theme('colors.customComplementaryGreen'),
+    inset 0 0 0.5rem theme('colors.customComplementaryGreen'),
     0 0 2rem theme('colors.customComplementaryGreen'),
     inset 0 0 2rem theme('colors.customComplementaryGreen'),
     0 0 4rem theme('colors.customComplementaryGreen'),
@@ -44,7 +45,8 @@
   height: 8px;
   border-radius: 1rem;
   background: theme('colors.customComplementaryBlue');
-  box-shadow: 0 0 0.5rem theme('colors.customComplementaryBlue'), inset 0 0 0.5rem theme('colors.customComplementaryBlue'),
+  box-shadow: 0 0 0.5rem theme('colors.customComplementaryBlue'),
+    inset 0 0 0.5rem theme('colors.customComplementaryBlue'),
     0 0 2rem theme('colors.customComplementaryBlue'),
     inset 0 0 2rem theme('colors.customComplementaryBlue'),
     0 0 4rem theme('colors.customComplementaryBlue'),
@@ -60,7 +62,8 @@
   height: 8px;
   border-radius: 1rem;
   background: theme('colors.customComplementaryPink');
-  box-shadow: 0 0 0.5rem theme('colors.customComplementaryPink'), inset 0 0 0.5rem theme('colors.customComplementaryPink'),
+  box-shadow: 0 0 0.5rem theme('colors.customComplementaryPink'),
+    inset 0 0 0.5rem theme('colors.customComplementaryPink'),
     0 0 2rem theme('colors.customComplementaryPink'),
     inset 0 0 2rem theme('colors.customComplementaryPink'),
     0 0 4rem theme('colors.customComplementaryPink'),
@@ -177,16 +180,19 @@
     animation: slide-in-top 0.75s;
   }
   .animate-slide-in-top-0 {
-    animation: slide-in-top 0.75s;
+    animation: slide-in-top 0.75s forwards;
     animation-delay: 0s;
+    opacity: 0;
   }
   .animate-slide-in-top-1 {
-    animation: slide-in-top 0.75s;
+    animation: slide-in-top 0.75s forwards;
     animation-delay: 0.25s;
+    opacity: 0;
   }
   .animate-slide-in-top-2 {
-    animation: slide-in-top 0.75s;
+    animation: slide-in-top 0.75s forwards;
     animation-delay: 0.5s;
+    opacity: 0;
   }
 }
 @keyframes slide-in-top {
@@ -303,7 +309,8 @@
   bottom: 0;
   /* background: theme('colors.customComplementaryPink'); */
   background: theme('colors.customComplementaryPink');
-  box-shadow: 0 0 0.5rem theme('colors.customComplementaryPink'), inset 0 0 0.5rem theme('colors.customComplementaryPink'),
+  box-shadow: 0 0 0.5rem theme('colors.customComplementaryPink'),
+    inset 0 0 0.5rem theme('colors.customComplementaryPink'),
     0 0 2rem theme('colors.customComplementaryPink'),
     inset 0 0 2rem theme('colors.customComplementaryPink'),
     0 0 4rem theme('colors.customComplementaryPink'),
