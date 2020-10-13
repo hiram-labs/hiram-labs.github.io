@@ -20,7 +20,7 @@ module.exports = {
     extend: {
       fontFamily: {
         lato: ['lato'],
-        Herculanum: ['Herculanum']
+        Herculanum: ['Herculanum', 'Dancing Script']
       }
     },
     screens: {
@@ -33,7 +33,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
 
-      customText: '#fbf7f5',
+      customBgContrast: '#fbf7f5',
       customBg: '#0f0e17',
       customSecondary: '#241944',
       customTetiary: '#191230',

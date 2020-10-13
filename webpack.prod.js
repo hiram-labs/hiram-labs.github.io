@@ -15,7 +15,7 @@ module.exports = merge(common, {
     // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: pkg.name,
+      title: 'Hiram Labs Ltd | ' + pkg.description,
       template: path.resolve(__dirname, 'src/_index.html')
     })
   ]

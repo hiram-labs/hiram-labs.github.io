@@ -9,5 +9,6 @@
   background-color: transparent;
 }
 
-.container {
+.container>div:nth-child(odd):nth-child(-n+3) {
+  background-image: linear-gradient(to top, #0f0e17, #141222, #18152e, #1d1739, #241944);
 }

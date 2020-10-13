@@ -3,9 +3,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* adds lato and Dancing fonts from google font api */
+/* adds lato and Dancing Sript fonts from google font api */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 /* centers a div */
 @variants responsive {
@@ -28,7 +28,8 @@
   height: 8px;
   border-radius: 1rem;
   background: theme('colors.customComplementaryGreen');
-  box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
+  box-shadow: 0 0 0.5rem theme('colors.customComplementaryGreen'),
+    inset 0 0 0.5rem theme('colors.customComplementaryGreen'),
     0 0 2rem theme('colors.customComplementaryGreen'),
     inset 0 0 2rem theme('colors.customComplementaryGreen'),
     0 0 4rem theme('colors.customComplementaryGreen'),
@@ -44,7 +45,8 @@
   height: 8px;
   border-radius: 1rem;
   background: theme('colors.customComplementaryBlue');
-  box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
+  box-shadow: 0 0 0.5rem theme('colors.customComplementaryBlue'),
+    inset 0 0 0.5rem theme('colors.customComplementaryBlue'),
     0 0 2rem theme('colors.customComplementaryBlue'),
     inset 0 0 2rem theme('colors.customComplementaryBlue'),
     0 0 4rem theme('colors.customComplementaryBlue'),
@@ -60,7 +62,8 @@
   height: 8px;
   border-radius: 1rem;
   background: theme('colors.customComplementaryPink');
-  box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
+  box-shadow: 0 0 0.5rem theme('colors.customComplementaryPink'),
+    inset 0 0 0.5rem theme('colors.customComplementaryPink'),
     0 0 2rem theme('colors.customComplementaryPink'),
     inset 0 0 2rem theme('colors.customComplementaryPink'),
     0 0 4rem theme('colors.customComplementaryPink'),
@@ -104,7 +107,7 @@
     box-shadow: 0px 0.5px 0px #c0c0c0, 0px 1px 0px #b0b0b0,
       0px 1.5px 0px #a0a0a0, 0px 2px 0px #909090,
       0px 2.5px 5px rgba(0, 0, 0, 0.5) !important;
-    border: 2.5px solid theme('colors.customText');
+    border: 2.5px solid theme('colors.customBgContrast');
     position: relative;
     transition: all ease 1s;
   }
@@ -142,7 +145,7 @@
     font-weight: bold;
     font-family: 'Dancing Script', cursive;
     color: #fff;
-    animation: flicker 1.5s infinite alternate;
+    animation: flicker 1.5s infinite alternate, custom-grow 0.75s;
   }
 }
 /* Animate neon flicker */
@@ -175,6 +178,21 @@
 @variants responsive {
   .animate-slide-in-top {
     animation: slide-in-top 0.75s;
+  }
+  .animate-slide-in-top-0 {
+    animation: slide-in-top 0.75s forwards;
+    animation-delay: 0s;
+    opacity: 0;
+  }
+  .animate-slide-in-top-1 {
+    animation: slide-in-top 0.75s forwards;
+    animation-delay: 0.25s;
+    opacity: 0;
+  }
+  .animate-slide-in-top-2 {
+    animation: slide-in-top 0.75s forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
   }
 }
 @keyframes slide-in-top {
@@ -289,7 +307,14 @@
   left: 51%;
   right: 51%;
   bottom: 0;
+  /* background: theme('colors.customComplementaryPink'); */
   background: theme('colors.customComplementaryPink');
+  box-shadow: 0 0 0.5rem theme('colors.customComplementaryPink'),
+    inset 0 0 0.5rem theme('colors.customComplementaryPink'),
+    0 0 2rem theme('colors.customComplementaryPink'),
+    inset 0 0 2rem theme('colors.customComplementaryPink'),
+    0 0 4rem theme('colors.customComplementaryPink'),
+    inset 0 0 4rem theme('colors.customComplementaryPink');
   height: 4px;
   -webkit-transition-property: left, right;
   transition-property: left, right;

@@ -17,14 +17,9 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
 
   return (
     <>
-      <div
-        className={cx(
-          styles.section1,
-          'center-child flex-col space-y-10 max-w-6xl'
-        )}
-      >
+      <div className={cx(styles.section1, 'center-child flex-col max-w-6xl')}>
         {/* banner and sub banner text */}
-        <div className={'px-10 text-center'}>
+        <div className={'px-10 mb-12 text-center'}>
           <div
             ref={bannerHeaderRef}
             className={
@@ -55,7 +50,7 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
         {/* small screen buttons */}
         <div
           className={
-            'lg:hidden center-child flex-col max-w-4xl animate-slide-in-top'
+            'lg:hidden center-child flex-col max-w-4xl animate-slide-in-bottom'
           }
         >
           <Dropdown

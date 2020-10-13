@@ -8,11 +8,11 @@
   .nav-logo {
     position: relative;
     transform-origin: top center;
-    animation: swing ease-in-out 2500ms infinite alternate;
+    animation: swing-slow ease-in-out 2500ms infinite alternate;
   }
 }
 
-@keyframes swing {
+@keyframes swing-slow {
   0% {
     transform: rotate(3deg);
   }

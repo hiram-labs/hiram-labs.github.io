@@ -17,7 +17,7 @@ const Layout: React.FC<TProps> = ({ header, body, footer }): JSX.Element => {
   return (
     <div
       className={
-        'min-h-screen bg-customBg text-customText flex flex-col item-center justify-between overflow-hidden relative'
+        'bg-customBg text-customBgContrast overflow-hidden relative'
       }
     >
       {header}
