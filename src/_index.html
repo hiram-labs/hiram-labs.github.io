@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Norwich - UK based Software & Data Solutions Company" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Icons -->
     <meta name="msapplication-TileColor" content="#da532c" />
@@ -30,14 +31,10 @@
       color="#5bbad5"
     />
     <!-- The default value is injected from name field of package.json -->
-    <title>
-      Hiram Labs Ltd | Software & Data Solutions for small businesses | Norwich
-      - UK
-    </title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
     <div id="root"></div>
     <noscript> You need to enable JavaScript to run this app. </noscript>
-    <!-- <script src="./dist/bundle.js"></script> -->
   </body>
 </html>

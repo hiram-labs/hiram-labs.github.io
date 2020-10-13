@@ -27,7 +27,7 @@ const Section2: React.FC<TProps> = (): JSX.Element => {
             )}
           >
             <img
-              src="/assets/images/backgrounds/teamwork.png"
+              src="/assets/compressed/teamwork.png"
               alt="teamwork illustration"
               style={{ maxHeight: '400px' }}
             />
