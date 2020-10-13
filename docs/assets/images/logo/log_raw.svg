@@ -20,7 +20,7 @@
       }
 
       #H {
-        font-family: Herculanum;
+        font-family: 'Herculanum', 'Dancing Script';
         animation: gradient ease-in-out 5s infinite;
         animation-direction: alternate;
       }
@@ -75,6 +75,6 @@
       <rect class="cls-3" width="322" height="322" rx="51"/>
       <rect class="cls-4" x="5" y="5" width="312" height="312" rx="46"/>
     </g>
-    <text id="H" class="cls-2 font-Herculanum" transform="translate(144.29 296.211) rotate(45)"><tspan x="0" y="0">H</tspan></text>
+    <text id="H" class="cls-2" transform="translate(144.29 296.211) rotate(45)"><tspan x="0" y="0">H</tspan></text>
   </g>
 </svg>

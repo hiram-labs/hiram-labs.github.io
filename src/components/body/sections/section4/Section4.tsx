@@ -54,7 +54,7 @@ const Section4: React.FC<TProps> = (): JSX.Element => {
                 )}
               >
                 <img src={'assets/images/projects/' + e.image} alt={e.name} />
-                <div className={cx(styles.label, 'rounded-t-lg bg-customText')}>
+                <div className={cx(styles.label, 'rounded-t-sm bg-customBgContrast')}>
                   <div className={'p-5'}>
                     <div
                       className={'md:text-3xl text-2xl font-bold text-customBg'}
