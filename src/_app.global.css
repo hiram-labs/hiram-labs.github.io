@@ -289,6 +289,46 @@
   }
 }
 
+/* custom animation for starts  */
+@keyframes twinkle {
+  0% {
+    transform: scale(1, 1);
+    background: theme('colors.customBgContrast');
+    animation-timing-function: ease-in;
+  }
+  60% {
+    transform: scale(0.8, 0.8);
+    background: theme('colors.customComplementaryBlue');
+    animation-timing-function: ease-out;
+  }
+  80% {
+    transform: scale(1, 1);
+    background: salmon;
+  }
+  100% {
+    transform: scale(0.5, 0.5);
+    background: theme('colors.customBgContrast');
+  }
+}
+/* shooting star */
+@keyframes shooting-star {
+  0% {
+    width: 0;
+    opacity: 0.1;
+    transform: translateX(0) rotateZ(45deg);
+  }
+  30% {
+    border-radius: 5px;
+    width: 500px;
+    opacity: 0.15;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+    transform: translateY(3500px) translateX(3500px);
+  }
+}
+
 /* custom hover effects */
 /* Underline From Center */
 .hvr-underline-from-center {

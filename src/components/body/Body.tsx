@@ -18,27 +18,39 @@ const Body: React.FC<TProps> = (): JSX.Element => {
   return (
     <div className={cx(styles.container)}>
       {/* landing section */}
-      <div className={'w-screen center-child bg-customBg text-customBgContrast'}>
+      <div
+        className={'w-screen center-child bg-customBg text-customBgContrast'}
+      >
         <Section1 />
       </div>
       {/* short intro section */}
-      <div className={'w-screen center-child bg-customBgContrast text-customBg'}>
+      <div
+        className={'w-screen center-child bg-customBgContrast text-customBg'}
+      >
         <Section2 />
       </div>
       {/* tech stack section */}
-      <div className={'w-screen center-child bg-customBg text-customBgContrast'}>
+      <div
+        className={'w-screen center-child bg-customBg text-customBgContrast'}
+      >
         <Section3 />
       </div>
       {/* projects section */}
-      <div className={'w-screen center-child bg-customBgContrast text-customBg'}>
+      <div
+        className={'w-screen center-child bg-customBgContrast text-customBg'}
+      >
         <Section4 />
       </div>
       {/* contact section */}
-      <div className={'w-screen center-child bg-customBg text-customBgContrast'}>
+      <div
+        className={'w-screen center-child bg-customBg text-customBgContrast'}
+      >
         <Section5 />
       </div>
       {/* space*/}
-      <div className={'w-screen center-child bg-customBgContrast text-customBg'}>
+      <div
+        className={'w-screen center-child bg-customBgContrast text-customBg'}
+      >
         <Section6 />
       </div>
     </div>
