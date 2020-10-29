@@ -20,6 +20,7 @@ import {
   FaWordpress
 } from 'react-icons/fa';
 import { useInView } from '../../../../hooks';
+import { curvedSvgBorder, zigZagSvgBorder } from '../../../svg/SvgCollection';
 
 interface TProps {}
 
@@ -55,77 +56,85 @@ const Section3: React.FC<TProps> = (): JSX.Element => {
 
   return (
     <>
-      <div ref={currentSection} className={cx(styles.section3, 'py-20 w-full')}>
-        <div
-          className={
-            'lg:mx-20 self-start center-child flex-col mx-10 max-w-4xl'
-          }
-        >
+      <div className={cx(styles.section3, 'py-20 w-full relative')}>
+        <div ref={currentSection}>
           <div
-            className={cx(
-              inView ? 'animate-slide-in-top' : null,
-              'sm:text-4xl text-3xl self-start font-bold leading-tight line-3 pt-5 relative'
-            )}
+            className={
+              'lg:mx-20 self-start center-child flex-col mx-10 max-w-4xl mt-48'
+            }
           >
-            {content.techHeader}
+            <div
+              className={cx(
+                inView ? 'animate-slide-in-top' : null,
+                'sm:text-4xl text-3xl self-start font-bold leading-tight line-3 pt-5 relative'
+              )}
+            >
+              {content.techHeader}
+            </div>
+            <div
+              className={cx(
+                inView ? 'animate-slide-in-bottom' : null,
+                'self-start py-4 text-xl'
+              )}
+            >
+              {content.techSub}
+            </div>
           </div>
-          <div
-            className={cx(
-              inView ? 'animate-slide-in-bottom' : null,
-              'self-start py-4 text-xl'
-            )}
-          >
-            {content.techSub}
+          <div className={cx(styles.marquee, 'lg:mx-20 mx-10 mt-10')}>
+            <ul className={cx(styles['marquee-content'])}>
+              <li>
+                <FaGithub />
+              </li>
+              <li>
+                <FaJava />
+              </li>
+              <li>
+                <FaPython />
+              </li>
+              <li>
+                <FaPhp />
+              </li>
+              <li>
+                <FaHtml5 />
+              </li>
+              <li>
+                <FaCss3 />
+              </li>
+              <li>
+                <FaDatabase />
+              </li>
+              <li>
+                <FaReact />
+              </li>
+              <li>
+                <FaVuejs />
+              </li>
+              <li>
+                <FaAngular />
+              </li>
+              <li>
+                <FaNodeJs />
+              </li>
+              <li>
+                <FaWordpress />
+              </li>
+              <li>
+                <FaAws />
+              </li>
+              <li>
+                <FaDocker />
+              </li>
+              <li>
+                <FaAndroid />
+              </li>
+            </ul>
           </div>
         </div>
-        <div className={cx(styles.marquee, 'lg:mx-20 mx-10 mt-10')}>
-          <ul className={cx(styles['marquee-content'])}>
-            <li>
-              <FaGithub />
-            </li>
-            <li>
-              <FaJava />
-            </li>
-            <li>
-              <FaPython />
-            </li>
-            <li>
-              <FaPhp />
-            </li>
-            <li>
-              <FaHtml5 />
-            </li>
-            <li>
-              <FaCss3 />
-            </li>
-            <li>
-              <FaDatabase />
-            </li>
-            <li>
-              <FaReact />
-            </li>
-            <li>
-              <FaVuejs />
-            </li>
-            <li>
-              <FaAngular />
-            </li>
-            <li>
-              <FaNodeJs />
-            </li>
-            <li>
-              <FaWordpress />
-            </li>
-            <li>
-              <FaAws />
-            </li>
-            <li>
-              <FaDocker />
-            </li>
-            <li>
-              <FaAndroid />
-            </li>
-          </ul>
+        <div className={'absolute top-0 w-screen'}>
+          {curvedSvgBorder('top')}
+        </div>
+        <div className={'absolute bottom-0 w-screen'}>
+          {zigZagSvgBorder('bottom')}
         </div>
       </div>
     </>

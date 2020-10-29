@@ -5,6 +5,7 @@ import { useResponsiveTypo } from '../../../../hooks/index';
 import content from '../../../../data/content.json';
 import Button3d from '../../../buttons/Button3d';
 import Dropdown from '../../../buttons/Dropdown';
+import { curvedSvgBorder } from '../../../svg/SvgCollection';
 
 interface TProps {}
 /**
@@ -17,7 +18,12 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
 
   return (
     <>
-      <div className={cx(styles.section1, 'center-child flex-col max-w-6xl')}>
+      <div
+        className={cx(
+          styles.section1,
+          'center-child flex-col max-w-6xl relative'
+        )}
+      >
         {/* banner and sub banner text */}
         <div className={'px-10 mb-12 text-center'}>
           <div
@@ -58,6 +64,9 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
             label="our services"
             content={content.services}
           />
+        </div>
+        <div className={'absolute bottom-0 w-screen'}>
+          {curvedSvgBorder('bottom')}
         </div>
       </div>
     </>

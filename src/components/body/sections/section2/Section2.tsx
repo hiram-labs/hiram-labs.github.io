@@ -17,9 +17,9 @@ const Section2: React.FC<TProps> = (): JSX.Element => {
     <>
       <div
         ref={currentSection}
-        className={cx(styles.section2, 'center-child w-full')}
+        className={cx(styles.section2, 'center-child w-full relative')}
       >
-        <div className={'lg:mx-20 grid grid-cols-6 gap-10 my-20 mx-10'}>
+        <div className={'lg:mx-20 grid grid-cols-6 gap-10 mx-10 mt-32'}>
           <div
             className={cx(
               inView ? 'animate-slide-in-left' : null,

@@ -91,7 +91,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
       <div
         className={cx(
           trigger ? 'lg:max-w-none' : null,
-          'sm:my-8 grid grid-cols-10 gap-5 max-w-6xl my-5'
+          'sm:my-8 grid grid-cols-10 gap-5 max-w-6xl my-5 '
         )}
       >
         {/* sets half of the links left */}
