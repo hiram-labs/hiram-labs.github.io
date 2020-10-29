@@ -17,7 +17,10 @@ const Section4: React.FC<TProps> = (): JSX.Element => {
 
   return (
     <>
-      <div ref={currentSection} className={cx(styles.section4, 'center-child')}>
+      <div
+        ref={currentSection}
+        className={cx(styles.section4, 'center-child ')}
+      >
         <div className={'my-20 center-child flex-col'}>
           <div className={'lg:mx-20 mx-10 max-w-3xl self-start'}>
             <div
@@ -54,7 +57,12 @@ const Section4: React.FC<TProps> = (): JSX.Element => {
                 )}
               >
                 <img src={'assets/compressed/' + e.image} alt={e.name} />
-                <div className={cx(styles.label, 'rounded-t-sm bg-customBgContrast')}>
+                <div
+                  className={cx(
+                    styles.label,
+                    'rounded-t-sm bg-customBgContrast'
+                  )}
+                >
                   <div className={'p-5'}>
                     <div
                       className={'md:text-3xl text-2xl font-bold text-customBg'}
