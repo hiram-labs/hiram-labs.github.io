@@ -1,3 +1,4 @@
+import { debounce } from 'lodash';
 import { useEffect, useState } from 'react';
 
 // helper function to do the logic of comparing the innerHeight of the window to the top of the parsed element
@@ -30,11 +31,13 @@ export function useInView(div: React.MutableRefObject<HTMLDivElement | null>) {
     setinView(helper(div.current!));
   };
 
+  const _debounce = debounce(scrollHandler, 500);
+
   useEffect(() => {
-    window.addEventListener('scroll', scrollHandler);
+    window.addEventListener('scroll', _debounce);
 
     return () => {
-      window.removeEventListener('scroll', scrollHandler);
+      window.removeEventListener('scroll', _debounce);
     };
   }, []);
 
