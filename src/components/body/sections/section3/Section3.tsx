@@ -56,7 +56,12 @@ const Section3: React.FC<TProps> = (): JSX.Element => {
 
   return (
     <>
-      <div className={cx(styles.section3, 'w-full center-child relative')}>
+      <div
+        className={cx(
+          styles.section3,
+          'w-full center-child relative max-h-screen'
+        )}
+      >
         <div className={'mt-64 py-64 w-full'} ref={currentSection}>
           <div
             className={
