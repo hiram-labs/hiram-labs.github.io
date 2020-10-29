@@ -25,7 +25,7 @@ const Section1: React.FC<TProps> = (): JSX.Element => {
 
   return (
     <>
-      <div className={'w-screen center-child'} ref={currentSection}>
+      <div className={'w-screen center-child '} ref={currentSection}>
         <div
           className={cx(
             styles.section1,

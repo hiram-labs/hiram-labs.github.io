@@ -41,24 +41,27 @@ export function generateStars(
 
     const posTop = arr[random];
     const posLeft = getRandomInt(0, element.clientWidth);
-    const starSize = Math.random() * radius;
+    const starSize = getRandomInt(1, 2.5);
 
     var starDiv = document.createElement('Div');
 
-    starDiv.style.background = '#fbf7f5';
     starDiv.style.width = `${starSize}px`;
     starDiv.style.height = `${starSize}px`;
-    starDiv.style.borderRadius = `${starSize}px`;
+    starDiv.style.borderRadius = `${starSize + 1}px`;
     starDiv.style.position = 'absolute';
     starDiv.style.top = `${posTop}px`;
     starDiv.style.left = `${posLeft}px`;
+    starDiv.style.background =
+      i < 50 ? '#54cae7' : i > 50 && i < 100 ? '#e75480' : '#fbf7f5';
     starDiv.style.animation =
-      i > 25
-        ? `twinkle ${(Math.random() + 2) * 5}s linear 10`
-        : `shooting-star ${(Math.random() + 2) * 5}s linear ${getRandomInt(
+      i < 35
+        ? `twinkle ${Math.random() + 2.5}s infinite alternate`
+        : i > 25 && i < 40
+        ? `shooting-star ${(Math.random() + 2) * 5}s linear ${getRandomInt(
             0,
             10
-          )}s 10`;
+          )}s 10`
+        : '';
 
     element.append(starDiv);
   }

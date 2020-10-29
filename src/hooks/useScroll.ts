@@ -1,3 +1,4 @@
+import { debounce } from 'lodash';
 import { useEffect, useState } from 'react';
 
 /**
@@ -31,10 +32,12 @@ export function useScroll(threshold: number = 0) {
       setunit(cur);
     };
 
-    window.addEventListener('scroll', scrollHandler);
+    const _debounce = debounce(scrollHandler, 500);
+
+    window.addEventListener('scroll', _debounce);
 
     return () => {
-      window.removeEventListener('scroll', scrollHandler);
+      window.removeEventListener('scroll', _debounce);
     };
   }, []);
 
