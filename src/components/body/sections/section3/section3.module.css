@@ -28,7 +28,7 @@
   left: 0;
   background: linear-gradient(
     to right,
-    /* rgba(15, 14, 23, 1) 0%, */ #141222 0%,
+    /* rgba(15, 14, 23, 1) 0%, */ #141220 0%,
     transparent 100%
   );
 }
@@ -36,7 +36,7 @@
   right: 0;
   background: linear-gradient(
     to left,
-    /* rgba(15, 14, 23, 1) 0%, */ #141222 0%,
+    /* rgba(15, 14, 23, 1) 0%, */ #141220 0%,
     transparent 100%
   );
 }
