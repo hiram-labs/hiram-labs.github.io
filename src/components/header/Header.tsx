@@ -44,8 +44,8 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
       ref={thisComponent}
       className={cx(
         styles.container,
-        trigger ? 'bg-opacity-75' : null,
-        'center-child bg-customSecondary relative'
+        // trigger ? 'bg-opacity-75' : null,
+        'center-child text-customBgContrast relative'
       )}
     >
       {/* big screen navbar */}
@@ -53,7 +53,7 @@ const Header: React.FC<TProps> = (props): JSX.Element => {
       <div
         className={cx(
           trigger ? 'lg:opacity-100 animate-slide-in-top z-50' : null,
-          'lg:fixed lg:w-screen lg:center-child top-0 bg-customSecondary shadow-2xl opacity-0 hidden'
+          'lg:fixed lg:w-screen lg:center-child top-0 bg-customSecondary opacity-0 hidden'
         )}
       >
         <div

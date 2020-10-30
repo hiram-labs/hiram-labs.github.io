@@ -1,6 +1,4 @@
 import React from 'react';
-import styles from './body.module.css';
-import cx from 'classnames';
 import Section1 from './sections/section1/Section1';
 import Section2 from './sections/section2/Section2';
 import Section3 from './sections/section3/Section3';
@@ -16,11 +14,9 @@ interface TProps {}
  */
 const Body: React.FC<TProps> = (): JSX.Element => {
   return (
-    <div className={cx(styles.container)}>
+    <div>
       {/* landing section */}
-      <div
-        className={'w-screen center-child bg-customBg text-customBgContrast'}
-      >
+      <div className={'w-screen center-child text-customBgContrast'}>
         <Section1 />
       </div>
       {/* short intro section */}
@@ -30,9 +26,7 @@ const Body: React.FC<TProps> = (): JSX.Element => {
         <Section2 />
       </div>
       {/* tech stack section */}
-      <div
-        className={'w-screen center-child bg-customBg text-customBgContrast'}
-      >
+      <div className={'w-screen center-child text-customBgContrast'}>
         <Section3 />
       </div>
       {/* projects section */}
@@ -42,9 +36,7 @@ const Body: React.FC<TProps> = (): JSX.Element => {
         <Section4 />
       </div>
       {/* contact section */}
-      <div
-        className={'w-screen center-child bg-customBg text-customBgContrast'}
-      >
+      <div className={'w-screen center-child text-customBgContrast'}>
         <Section5 />
       </div>
       {/* space*/}

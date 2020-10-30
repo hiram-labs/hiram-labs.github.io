@@ -145,7 +145,7 @@
     font-weight: bold;
     font-family: 'Dancing Script', cursive;
     color: #fff;
-    animation: flicker 1.5s infinite alternate, custom-grow 0.75s;
+    animation: flicker 1.5s infinite alternate, custom-grow 0.5s;
   }
 }
 /* Animate neon flicker */
@@ -177,20 +177,20 @@
 /* slides div in from top with fade in */
 @variants responsive {
   .animate-slide-in-top {
-    animation: slide-in-top 0.75s;
+    animation: slide-in-top 0.5s;
   }
   .animate-slide-in-top-0 {
-    animation: slide-in-top 0.75s forwards;
+    animation: slide-in-top 0.5s forwards;
     animation-delay: 0s;
     opacity: 0;
   }
   .animate-slide-in-top-1 {
-    animation: slide-in-top 0.75s forwards;
+    animation: slide-in-top 0.5s forwards;
     animation-delay: 0.25s;
     opacity: 0;
   }
   .animate-slide-in-top-2 {
-    animation: slide-in-top 0.75s forwards;
+    animation: slide-in-top 0.5s forwards;
     animation-delay: 0.5s;
     opacity: 0;
   }
@@ -209,7 +209,7 @@
 /* slides div in from bottom with fade in */
 @variants responsive {
   .animate-slide-in-bottom {
-    animation: slide-in-bottom 0.75s;
+    animation: slide-in-bottom 0.5s;
   }
 }
 @keyframes slide-in-bottom {
@@ -226,7 +226,7 @@
 /* slides div in from left with fade in */
 @variants responsive {
   .animate-slide-in-left {
-    animation: slide-in-left 0.75s;
+    animation: slide-in-left 0.5s;
   }
 }
 @keyframes slide-in-left {
@@ -243,7 +243,7 @@
 /* slides div in from right with fade in  */
 @variants responsive {
   .animate-slide-in-right {
-    animation: custom-slide-in-right 0.75s;
+    animation: custom-slide-in-right 0.5s;
   }
 }
 @keyframes custom-slide-in-right {
@@ -260,7 +260,7 @@
 /* Grows div from scale 0 t0 100% with fade in  */
 @variants responsive {
   .animate-grow {
-    animation: custom-grow 0.75s;
+    animation: custom-grow 0.5s;
   }
 }
 @keyframes custom-grow {

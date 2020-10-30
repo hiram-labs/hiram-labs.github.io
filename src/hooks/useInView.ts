@@ -1,5 +1,5 @@
-import { debounce } from 'lodash';
 import { useEffect, useState } from 'react';
+import { useScroll } from './useScroll';
 
 // helper function to do the logic of comparing the innerHeight of the window to the top of the parsed element
 const helper = (param: HTMLDivElement) => {
@@ -23,6 +23,8 @@ const helper = (param: HTMLDivElement) => {
  */
 // Hook to determine what referenced object is in view
 export function useInView(div: React.MutableRefObject<HTMLDivElement | null>) {
+  const { unit } = useScroll();
+
   //set the initial state of the div element
   const [inView, setinView] = useState<boolean>(false);
 
@@ -31,15 +33,9 @@ export function useInView(div: React.MutableRefObject<HTMLDivElement | null>) {
     setinView(helper(div.current!));
   };
 
-  const _debounce = debounce(scrollHandler, 500);
-
   useEffect(() => {
-    window.addEventListener('scroll', _debounce);
-
-    return () => {
-      window.removeEventListener('scroll', _debounce);
-    };
-  }, []);
+    scrollHandler();
+  }, [unit]);
 
   // triggers when to show element passed as param in document flow using visibility attribute
   useEffect(() => {
