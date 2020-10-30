@@ -1,4 +1,6 @@
 import React from 'react';
+import cx from 'classnames';
+import styles from './layout.module.css';
 
 interface TProps {
   header: JSX.Element;
@@ -15,11 +17,7 @@ interface TProps {
  */
 const Layout: React.FC<TProps> = ({ header, body, footer }): JSX.Element => {
   return (
-    <div
-      className={
-        'bg-customBg text-customBgContrast overflow-hidden relative'
-      }
-    >
+    <div className={cx(styles.container, 'overflow-hidden relative')}>
       {header}
       {body}
       {footer}

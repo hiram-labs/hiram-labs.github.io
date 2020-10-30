@@ -10,7 +10,7 @@
 }
 
 /* generates gradient background for firts two section */
-.container > div:nth-child(odd):nth-child(-n + 3) {
+.container {
   background-image: linear-gradient(
     to top,
     #0f0e17,
